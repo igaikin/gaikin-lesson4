@@ -6,7 +6,7 @@ public class Task {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		int a = getIntFromConsole(sc,10. "enter the number");
+		int a = getIntFromConsole(scanner, 10, "Enter number A: ");
 		System.out.println("Enter a number =b");
 		int b = scanner.nextInt();
 		System.out.println("Enter a number =c");

@@ -2,15 +2,23 @@ package com.belhard.lesson4.classes;
 
 public class Group {
 
-	private int numberGroup;
-	private Teacher[] teacher = new Teacher[1];
+	public int numberGroup nGroup=new numberGroup;
+
+	public int getNumberGroup() {
+		return numberGroup;
+	}
+
+	public void setNumberGroup(int Group) {
+		this.Group = Group;
+	}
+
+	private Teacher;
 	private Student[] students = new Student[8];
 	private int numberOfStudents;
-	private int numberOfTeachers;
 
 	public String toString() {
 		String str = "Group number '" + numberGroup + "'\n Teacher: " + teacher.toString() + "\n";
-		if (teacher[i] != null) {
+		if (teacher != null) {
 			str = str + "Teacher " + teacher.toString + "\n";
 		}
 
@@ -38,21 +46,22 @@ public class Group {
 
 	public boolean removeStudent(long id) {
 		for (int i = 0; i < students.length; i++) {
-			if (students[i].getId() == id) {
+			if (students[i] != null && students[i].getId() == id) {
 				students[i] = null;
 				numberOfStudents--;
 				return true;
 			}
 		}
+		return false;
 
 	}
 
-	public boolean addTeacher(Teacher teach1) {
-		if (numberOfTeachers < teacher.length) {
-			for (int i = 0; i < teacher.length; i++) {
-				if (teacher[i] == null) {
-					teacher[i] = teach1;
-					numberOfTeachers++;
+	public boolean addTeacher(Teacher teach) {
+		if (teacher) {
+			{
+				if (teacher == null) {
+					teacher = teach;
+
 					return true;
 				}
 			}
@@ -62,22 +71,22 @@ public class Group {
 	}
 
 	public boolean removeTeacher(long id) {
-		for (int i = 0; i < teacher.length; i++) {
-			if (teacher[i].getId() == id) {
-				teacher[i] = null;
-				numberOfTeachers--;
-				return true;
-			}
+
+		if (teacher.getId() == id) {
+			teacher = null;
+
+			return true;
+
 		}
 		return false;
 	}
 
 	public int getNumber() {
-		return numberGroup;
+		return nGroup;
 	}
 
 	public void setNumber(int number) {
-		this.numberGroup = number;
+		this.nGroup = number;
 	}
 
 	public Teacher[] getTeacher() {

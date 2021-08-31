@@ -1,7 +1,7 @@
 package com.belhard.lesson4.classes;
 
 public class Teacher {
-	long id;
+	private long id;
 	private String firstName;
 	private String lastName;
 	private int age;

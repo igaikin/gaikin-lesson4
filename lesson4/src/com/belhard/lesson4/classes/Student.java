@@ -9,7 +9,7 @@ public class Student {
 	private int course;
 
 	public String toString() {
-		String str = "Student: -> id - " + id + ", Name - " + firstName + " " + lastName;
+		String str = "Student-> id - " + id + ", Name - " + firstName + " " + lastName;
 		return str;
 	}
 

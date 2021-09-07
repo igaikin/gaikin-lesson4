@@ -1,6 +1,7 @@
 package com.belhard.lesson4.classes;
 
 public class Cleaner extends Employee {
+
 	public Cleaner cleaner;
 
 	int room;

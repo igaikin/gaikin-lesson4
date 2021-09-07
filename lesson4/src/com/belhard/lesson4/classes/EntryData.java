@@ -4,20 +4,22 @@ public class EntryData {
 
 	public static void main(String[] args) {
 		Teacher teacher = new Teacher("Kevin", "Bright");
-		teacher.setDepartment("Friends");
-		teacher.setPost("Executive producer");
+
+		teacher.setPost("Producing");
 		teacher.setAge(66);
 		teacher.setAcademicDegree("Docent");
 		teacher.setFaculty("Cinema");
 
-		Student student1 = new Student("Jennifer", "Aniston");
-		Student student2 = new Student("Courteney", "Cox");
-		Student student3 = new Student("Lisa", "Kudrow");
-		Student student4 = new Student("Matt", "LeBlanc");
-		Student student5 = new Student("Matthew", "Perry");
-		Student student6 = new Student("David", "Schwimmer");
-		Student student7 = new Student("James Michael", "Tyler");
-		Student student8 = new Student("Elliott", "Gould");
+		Student student1 = new Student("Jennifer", "Aniston", 1);
+		Student student2 = new Student("Courteney", "Cox", 1);
+		Student student3 = new Student("Lisa", "Kudrow", 1);
+		Student student4 = new Student("Matt", "LeBlanc", 2);
+		Student student5 = new Student("Matthew", "Perry", 2);
+		Student student6 = new Student("David", "Schwimmer", 2);
+		Student student7 = new Student("James Michael", "Tyler", 3);
+		Student student8 = new Student("Elliott", "Gould", 3);
+
+		Cleaner cleaner = new Cleaner("j", "k", 205);
 
 		Group group = new Group();
 		group.setTeacher(teacher);

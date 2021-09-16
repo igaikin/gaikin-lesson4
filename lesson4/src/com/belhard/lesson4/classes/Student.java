@@ -1,9 +1,12 @@
 package com.belhard.lesson4.classes;
 
+import java.math.BigDecimal;
+
 public class Student extends Person {
 
 	private String faculty;
 	private int course;
+	private BigDecimal scholarship;
 
 	public Student(String firstName, String lastName, int course) {
 		super(firstName, lastName);

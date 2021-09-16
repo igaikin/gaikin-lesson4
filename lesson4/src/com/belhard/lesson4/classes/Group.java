@@ -1,7 +1,10 @@
 package com.belhard.lesson4.classes;
 
 public class Group {
-
+	long id;
+	private int Teacher teachers;
+	private Student[] students = new Student[8];
+	private int numberOfStudent;
 	private String nameGroup;
 
 	public String getName() {

@@ -5,14 +5,12 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private int age;
+	private String gender;
 
 	public Person(String firstName, String lastName) {
 		id = (long) (Math.random() * Long.MAX_VALUE);
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
-
-	public Person(String firstName) {
 	}
 
 	public long getId() {
@@ -43,4 +41,12 @@ public class Person {
 		this.age = age;
 	}
 
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+
+	}
 }

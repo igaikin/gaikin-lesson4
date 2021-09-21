@@ -1,35 +1,67 @@
 package com.belhard.lesson4.classes;
 
 public class Group {
-	long id;
-	private int Teacher teachers;
+
+	private String name;
+	private Teacher teacher;
 	private Student[] students = new Student[8];
-	private int numberOfStudent;
-	private String nameGroup;
+	private int quantity;
+	int sum = 0;
+	int count = 0;
 
-	public String getName() {
-		return nameGroup;
-	}
-
-	public void setName(String name) {
-		this.nameGroup = name;
-	}
-
+	@Override
 	public String toString() {
-		String str = "Group name '" + nameGroup + "'\n" + teacher.toString() + "\n";
+		String str = "\t**********GROUP**********\n\t-----------" + name + "------------" + "\n\n";
 		if (teacher != null) {
-			str = str + "Teacher " + teacher.toString() + "\n";
+			str = str + teacher.toString() + "\n";
 		}
-
+		int util = 1;
 		for (int i = 0; i < students.length; i++) {
+
 			if (students[i] != null) {
-				str = str + (i + 1) + students[i].toString() + "\n";
+				str = str + "\t" + util + ":  " + students[i].toString() + "\n";
+				util++;
+			} else if (students[i] == null) {
+				str = str + "\t" + util + ":  " + "STUDENT IS NOT ASSIGNED" + "\n";
+				util++;
 			}
+
 		}
 		return str;
 	}
 
-	private Teacher teacher;
+	public boolean AddPerson(Student pers) {
+		if (quantity < students.length) {
+			for (int i = 0; i < students.length; i++) {
+				if (students[i] == null) {
+					students[i] = pers;
+					quantity++;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	public boolean delPerson(long numberCard) {
+		for (int i = 0; i < students.length; i++) {
+			if (students[i] != null && students[i].getNumberCard() == numberCard) {
+				students[i] = null;
+				quantity--;
+
+			}
+		}
+		return false;
+
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public Teacher getTeacher() {
 		return teacher;
@@ -39,38 +71,11 @@ public class Group {
 		this.teacher = teacher;
 	}
 
-	public boolean removeTeacher(long id) {
-		if (teacher.getId() == id) {
+	public boolean removeTeacher(long numberCard) {
+		if (teacher != null && teacher.getNumberCard() == numberCard) {
 			teacher = null;
-			return true;
 		}
 		return false;
 	}
 
-	private Student[] students = new Student[8];
-	private int numberOfStudents;
-
-	public boolean addStudent(Student stud1) {
-		if (numberOfStudents < students.length) {
-			for (int i = 0; i < students.length; i++) {
-				if (students[i] == null) {
-					students[i] = stud1;
-					numberOfStudents++;
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-
-	public boolean removeStudent(long id) {
-		for (int i = 0; i < students.length; i++) {
-			if (students[i] != null && students[i].getId() == id) {
-				students[i] = null;
-				numberOfStudents--;
-				return true;
-			}
-		}
-		return false;
-	}
 }

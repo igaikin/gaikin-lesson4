@@ -1,20 +1,23 @@
 package com.belhard.lesson4.classes;
 
-import java.math.BigDecimal;
-
 public class Student extends Person {
-
 	private String faculty;
 	private int course;
-	private BigDecimal scholarship;
+	private int group;
 
-	public Student(String firstName, String lastName, int course) {
-		super(firstName, lastName);
+	public Student(String firstName, String lastName, int age, int course, String faculty, int group) {
+
+		super(firstName, lastName, age);
 		this.course = course;
+		this.faculty = faculty;
+		this.group = group;
+
 	}
 
 	public String toString() {
-		return "Student-> id - " + getId() + ", Name - " + getFirstName() + " " + getLastName();
+		return "Student:\n" + "Name:\t\t" + getFirstName() + " " + getLastName() + ";\n" + "Age:\t\t" + getAge() + ";\n"
+				+ "Course:\t\t" + getCourse() + ";\n" + "Faculty:\t" + getFaculty() + ";\n" + "Group:\t\t" + getGroup()
+				+ ";\n" + "ID:\t\t" + getNumberCard() + ";\n";
 
 	}
 
@@ -32,6 +35,14 @@ public class Student extends Person {
 
 	public void setCourse(int course) {
 		this.course = course;
+	}
+
+	public int getGroup() {
+		return group;
+	}
+
+	public void setGroup(int group) {
+		this.group = group;
 	}
 
 }

@@ -1,36 +1,23 @@
 package com.belhard.lesson4.classes;
 
 public class Person {
-	private long id;
+
+	private long numberCard;
 	private String firstName;
 	private String lastName;
 	private int age;
-	private String gender;
+	private String nationality;
 
-	public Person(String firstName, String lastName) {
-		id = (long) (Math.random() * Long.MAX_VALUE);
+	public Person(String firstName, String lastName, int age) {
+		numberCard = (long) ((Math.random() * Long.MAX_VALUE));
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.age = age;
 	}
 
-	public long getId() {
-		return id;
-	}
+	public long getNumberCard() {
+		return numberCard;
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
 	}
 
 	public int getAge() {
@@ -41,12 +28,30 @@ public class Person {
 		this.age = age;
 	}
 
-	public String getGender() {
-		return gender;
+	public String getFirstName() {
+		return firstName;
+
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
+	public String getLastName() {
+		return lastName;
+
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getNationality() {
+		return nationality;
+
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
 	}
 }

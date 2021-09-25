@@ -2,12 +2,20 @@ package com.belhard.lesson4.classes;
 
 import java.math.BigDecimal;
 
-public class Chair {
+public class Chair implements Identifiable {
 
+	private long id;
 	private String name;
 	private static Cleaner cleaner;
-	private static Teacher[] teacher = new Teacher[10];
-	private int quantity;
+	private MyCollection teachers;
+	private int numberOfChair;
+
+	public Chair(String name, int numberOfChair) {
+		this.numberOfChair = numberOfChair;
+		this.name = name;
+		id = (long) (Math.random() * Long.MAX_VALUE);
+		teachers = new DynamicArray();
+	}
 
 	public String toString() {
 		String str = "\t*******Chair:********\n\t" + name + "\n\n";
@@ -15,12 +23,13 @@ public class Chair {
 			str = str + cleaner.toString() + "\n\n";
 		}
 		int util = 1;
-		for (int i = 0; i < teacher.length; i++) {
 
-			if (teacher[i] != null) {
-				str = str + "\t" + util + ": " + teacher[i].toString() + "\n\n";
+		for (int i = 0; i < teachers.toArray().length; i++) {
+			if (teachers.toArray()[i] != null) {
+				str = str + "\t" + util + ":  " + teachers.toArray()[i].toString() + "\n\n";
 				util++;
-			} else if (teacher[i] == null) {
+
+			} else if (teachers.toArray()[i] == null) {
 				str = str + "\t" + util + ":  " + "THE EMPLOYEE IS NOT ASSIGNED\n" + "\n";
 				util++;
 			}
@@ -29,32 +38,10 @@ public class Chair {
 		return str;
 	}
 
-	public boolean AddPerson(Teacher pers) {
-		if (quantity < teacher.length) {
-			for (int i = 0; i < teacher.length; i++) {
-				if (teacher[i] == null) {
-					teacher[i] = pers;
-					quantity++;
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+	public void addTeachers(Teacher teacher) {
 
-	public boolean removePerson(long numberCard) {
-		for (int i = 0; i < teacher.length; i++) {
-			if (teacher[i] != null && teacher[i].getNumberCard() == numberCard) {
-				teacher[i] = null;
-				quantity--;
+		teachers.add(teacher);
 
-			}
-		}
-		return false;
-	}
-
-	public Teacher[] getArrayTeacher() {
-		return teacher;
 	}
 
 	public String getName() {
@@ -70,10 +57,10 @@ public class Chair {
 	}
 
 	public void setCleaner(Cleaner cleaner) {
-		this.cleaner = cleaner;
+		Chair.cleaner = cleaner;
 	}
 
-	public void removeCleaner() {
+	public void delCleaner() {
 		cleaner = null;
 	}
 
@@ -90,4 +77,18 @@ public class Chair {
 		allSalary = allSalaries.add(cleaner.getSalaryEmployee());
 		return allSalary;
 	}
+
+	@Override
+	public long getId() {
+		return id;
+	}
+
+	@Override
+	public int hashCode() {
+		long result = id;
+		result = 31 * result + numberOfChair;
+		result = 31 * result + (name == null ? 0 : name.hashCode());
+		return (int) result;
+	}
+
 }

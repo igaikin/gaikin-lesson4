@@ -2,7 +2,7 @@ package com.belhard.lesson4.classes;
 
 import java.math.BigDecimal;
 
-public abstract class Employee extends Person {
+abstract class Employee extends Person {
 	private String subdivision;
 	private String position;
 	private int hoursWorked;
@@ -16,6 +16,13 @@ public abstract class Employee extends Person {
 		this.position = position;
 		this.hoursWorked = hoursWorked;
 		this.salaryEmployee = salaryEmployee;
+
+	}
+
+	@Override
+	public String introduceYourself() {
+		return "\nHi! My name is " + getFirstName() + "," + getLastName() + "," + ". I`m " + getPost()
+				+ " this University. I'm " + getAge() + "years old.\n";
 
 	}
 
@@ -51,4 +58,5 @@ public abstract class Employee extends Person {
 		this.hoursWorked = hoursWorked;
 
 	}
+
 }

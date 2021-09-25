@@ -1,31 +1,34 @@
 package com.belhard.lesson4.classes;
 
-public class Person {
+abstract class Person {
 
-	private long numberCard;
+	private long id;
 	private String firstName;
 	private String lastName;
-	private int age;
+	private static int age;
 	private String nationality;
+	private long numberCard;
 
 	public Person(String firstName, String lastName, int age) {
 		numberCard = (long) ((Math.random() * Long.MAX_VALUE));
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.age = age;
+		Person.age = age;
 	}
 
-	public long getNumberCard() {
-		return numberCard;
+	public abstract String introduceYourself();
+
+	public long getId() {
+		return id;
 
 	}
 
-	public int getAge() {
+	public static int getAge() {
 		return age;
 	}
 
 	public void setAge(int age) {
-		this.age = age;
+		Person.age = age;
 	}
 
 	public String getFirstName() {
@@ -48,10 +51,21 @@ public class Person {
 
 	public String getNationality() {
 		return nationality;
-
 	}
 
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
+	}
+
+	public long getNumberCard() {
+		return numberCard;
+	}
+
+	public void setNumberCard(long numberCard) {
+		this.numberCard = numberCard;
+	}
+
+	public long myNumberCard() {
+		return 0;
 	}
 }

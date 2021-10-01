@@ -11,6 +11,7 @@ abstract class Person {
 
 	public Person(String firstName, String lastName, int age) {
 		numberCard = (long) ((Math.random() * Long.MAX_VALUE));
+		id = (long) ((Math.random() * Long.MAX_VALUE));
 		this.firstName = firstName;
 		this.lastName = lastName;
 		Person.age = age;

@@ -5,31 +5,15 @@ abstract class Person {
 	private long id;
 	private String firstName;
 	private String lastName;
-	private static int age;
-	private String nationality;
-	private long numberCard;
-
-	public Person(String firstName, String lastName, int age) {
-		numberCard = (long) ((Math.random() * Long.MAX_VALUE));
-		id = (long) ((Math.random() * Long.MAX_VALUE));
-		this.firstName = firstName;
-		this.lastName = lastName;
-		Person.age = age;
-	}
+	private int age;
 
 	public abstract String introduceYourself();
 
-	public long getId() {
-		return id;
-
-	}
-
-	public static int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		Person.age = age;
+	public Person(long id, String firstName, String lastName, int age) {
+		id = (long) (Math.random() * Long.MAX_VALUE);
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.setAge(age);
 	}
 
 	public String getFirstName() {
@@ -50,23 +34,23 @@ abstract class Person {
 		this.lastName = lastName;
 	}
 
-	public String getNationality() {
-		return nationality;
+	public long getId() {
+		return id;
 	}
 
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public long getNumberCard() {
-		return numberCard;
+	public int getAge() {
+		return age;
 	}
 
-	public void setNumberCard(long numberCard) {
-		this.numberCard = numberCard;
+	public void setAge(int age) {
+		this.age = age;
 	}
 
-	public long myNumberCard() {
+	public long id() {
 		return 0;
 	}
 }

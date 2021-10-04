@@ -1,18 +1,16 @@
 package com.belhard.lesson4.classes;
 
-public class Group implements Identifiable {
+public class Group {
 
 	private String name;
 	private static Teacher teacher;
 	private MyCollection students;
-	private long id;
 	int sum = 0;
 	int count = 0;
 	float result;
 
 	public Group(String name, int i) {
 		this.name = name;
-		id = (long) (Math.random() * Long.MAX_VALUE);
 		students = new DynamicArray();
 	}
 
@@ -63,20 +61,11 @@ public class Group implements Identifiable {
 		Group.teacher = teacher;
 	}
 
-	public boolean delTeacher(long numberCard) {
-		if (teacher != null && teacher.getId() == numberCard) {
+	public boolean delTeacher(long id) {
+		if (teacher != null && teacher.getId() == id) {
 			teacher = null;
 		}
 		return false;
-	}
-
-	public long getID() {
-		return id;
-	}
-
-	@Override
-	public long getId() {
-		return 0;
 	}
 
 }

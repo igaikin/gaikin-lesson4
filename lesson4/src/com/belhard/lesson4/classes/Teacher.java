@@ -5,14 +5,19 @@ import java.math.BigDecimal;
 class Teacher extends Employee implements Identifiable {
 
 	private String department;
-	private String academicDegree;
 	private int curatorOfTheGroup;
 	private BigDecimal salaryTeacher = new BigDecimal("0");
+	public AcademicDegree academicDegree;
 
-	public Teacher(String firstName, String lastName, int age, String subdivision, String position, int hoursWorked,
-			String department, String academicDegree, int curatorOfTheGroup, BigDecimal salaryTeacher) {
+	public enum AcademicDegree {
+		DOCTOR, CANDIDATE, PROFESSOR, MASTER, ASSISTANT_PROFESSOR, BACHELOR_OF_BUSINES_ADMINISTRATION;
+	}
 
-		super(firstName, lastName, age, subdivision, position, hoursWorked, salaryTeacher);
+	public Teacher(long id, String firstName, String lastName, int age, String subdivision,
+			AcademicDegree academicDegree, Post post, int hoursWorked, String department, int curatorOfTheGroup,
+			BigDecimal salaryTeacher) {
+
+		super(id, firstName, lastName, age, subdivision, hoursWorked, post, salaryTeacher);
 		this.department = department;
 		this.academicDegree = academicDegree;
 		this.curatorOfTheGroup = curatorOfTheGroup;
@@ -21,10 +26,16 @@ class Teacher extends Employee implements Identifiable {
 
 	public String toString() {
 		return "\tTEACHER:\nName:\t\t" + getFirstName() + " " + getLastName() + "\nAge:\t\t" + getAge()
-				+ "\nSubdivision:\t" + getSubdivision() + "\n" + "Post:\t\t" + getPost() + "\n" + "Department:\t"
-				+ getDepartment() + "\n" + "Academic Degree: " + getAcademicDegree() + "\n" + "ID:\t\t" + getId() + "\n"
+				+ "\nSubdivision:\t" + getSubdivision() + "\n" + "Post:\t\t" + post + "\n" + "Department:\t"
+				+ getDepartment() + "\n" + "Academic Degree: " + academicDegree + "\n" + "ID:\t\t" + getId() + "\n"
 				+ "Curator Group:\t" + getCuratorOfTheGroup() + "\n" + "Hours Worked:\t" + getHoursWorked() + "\n"
 				+ "SALARY:\t\t" + getSalaryTeacher() + "\n___________________________________";
+	}
+
+	@Override
+	public String introduceYourself() {
+		return "\nHi! My name is " + getFirstName() + " " + getLastName() + "," + ". I`m " + post
+				+ " this University. I'm " + getAge() + " years old.\n";
 	}
 
 	public BigDecimal getSalaryTeacher() {
@@ -42,16 +53,6 @@ class Teacher extends Employee implements Identifiable {
 
 	public void setDepartment(String department) {
 		this.department = department;
-
-	}
-
-	public void setAcademicDegree(String academicDegree) {
-		this.academicDegree = academicDegree;
-	}
-
-	public String getAcademicDegree() {
-		return academicDegree;
-
 	}
 
 	public int getCuratorOfTheGroup() {
@@ -63,17 +64,13 @@ class Teacher extends Employee implements Identifiable {
 		this.curatorOfTheGroup = curatorOfTheGroup;
 	}
 
-	@Override
-	public long myNumberCard() {
-		return getNumberCard();
-	}
+//	@Override
+//	public int hashCode() {
+//		long result = curatorOfTheGroup;
+//		result = 31 * result + Teacher.getAge();
+//		result = 31 * result + (department == null ? 0 : department.hashCode());
+//		result = 31 * result + (academicDegree == null ? 0 : academicDegree.hashCode());
+//		return (int) result;
+//	}
 
-	@Override
-	public int hashCode() {
-		long result = curatorOfTheGroup;
-		result = 31 * result + Teacher.getAge();
-		result = 31 * result + (department == null ? 0 : department.hashCode());
-		result = 31 * result + (academicDegree == null ? 0 : academicDegree.hashCode());
-		return (int) result;
-	}
 }

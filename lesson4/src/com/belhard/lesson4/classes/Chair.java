@@ -2,18 +2,16 @@ package com.belhard.lesson4.classes;
 
 import java.math.BigDecimal;
 
-public class Chair implements Identifiable {
+public class Chair {
 
-	private long id;
 	private String name;
 	private static Cleaner cleaner;
 	private MyCollection teachers;
-	private int numberOfChair;
 
-	public Chair(String name, int numberOfChair) {
-		this.numberOfChair = numberOfChair;
+	public Chair(String name) {
+
 		this.name = name;
-		id = (long) (Math.random() * Long.MAX_VALUE);
+
 		teachers = new DynamicArray();
 	}
 
@@ -76,19 +74,6 @@ public class Chair implements Identifiable {
 		}
 		allSalary = allSalaries.add(cleaner.getSalaryEmployee());
 		return allSalary;
-	}
-
-	@Override
-	public long getId() {
-		return id;
-	}
-
-	@Override
-	public int hashCode() {
-		long result = id;
-		result = 31 * result + numberOfChair;
-		result = 31 * result + (name == null ? 0 : name.hashCode());
-		return (int) result;
 	}
 
 }

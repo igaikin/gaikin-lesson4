@@ -4,25 +4,30 @@ import java.math.BigDecimal;
 
 abstract class Employee extends Person {
 	private String subdivision;
-	private String position;
 	private int hoursWorked;
 	private BigDecimal salaryEmployee;
+	public Post post;
 
-	public Employee(String firstName, String lastName, int age, String subdivision, String position, int hoursWorked,
+	public enum Post {
+		HEAD_OF_DEPARTMENT, DEPUTY, TEACHER, SENIOR_LECTURER, ASSISTANT, CLEANER;
+
+	}
+
+	public Employee(long id, String firstName, String lastName, int age, String subdivision, int hoursWorked, Post post,
 			BigDecimal salaryEmployee) {
 
-		super(firstName, lastName, age);
-		this.subdivision = subdivision;
-		this.position = position;
+		super(id, firstName, lastName, age);
+		this.post = post;
 		this.hoursWorked = hoursWorked;
 		this.salaryEmployee = salaryEmployee;
+		this.subdivision = subdivision;
 
 	}
 
 	@Override
 	public String introduceYourself() {
-		return "\nHi! My name is " + getFirstName() + "," + getLastName() + "," + ". I`m " + getPost()
-				+ " this University. I'm " + getAge() + "years old.\n";
+		return "\nHi! My name is " + getFirstName() + " " + getLastName() + "," + ". I`m " + post
+				+ " this University. I'm " + getAge() + " years old.\n";
 
 	}
 
@@ -34,22 +39,6 @@ abstract class Employee extends Person {
 		this.salaryEmployee = salaryEmployee;
 	}
 
-	public String getSubdivision() {
-		return subdivision;
-	}
-
-	public void setSubdivision(String subdivision) {
-		this.subdivision = subdivision;
-	}
-
-	public String getPost() {
-		return position;
-	}
-
-	public void setPost(String position) {
-		this.subdivision = position;
-	}
-
 	public int getHoursWorked() {
 		return hoursWorked;
 	}
@@ -57,6 +46,14 @@ abstract class Employee extends Person {
 	public void setHoursWorked(int hoursWorked) {
 		this.hoursWorked = hoursWorked;
 
+	}
+
+	public String getSubdivision() {
+		return subdivision;
+	}
+
+	public void setSubdivision(String subdivision) {
+		this.subdivision = subdivision;
 	}
 
 }

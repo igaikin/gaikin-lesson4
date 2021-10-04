@@ -6,10 +6,10 @@ class Cleaner extends Employee implements Identifiable {
 	private String workingArea;
 	private BigDecimal salaryCleaner;
 
-	public Cleaner(String firstName, String lastName, int age, String subdivision, String position, int hoursWorked,
+	public Cleaner(long id, String firstName, String lastName, int age, String subdivision, Post post, int hoursWorked,
 			String workingArea, BigDecimal salaryCleaner) {
 
-		super(firstName, lastName, age, subdivision, position, hoursWorked, salaryCleaner);
+		super(id, firstName, lastName, age, subdivision, hoursWorked, post, salaryCleaner);
 		this.workingArea = workingArea;
 		this.salaryCleaner = salaryCleaner;
 
@@ -17,9 +17,9 @@ class Cleaner extends Employee implements Identifiable {
 
 	public String toString() {
 		return "Cleaner:\nName:\t\t" + getFirstName() + " " + getLastName() + " " + "\n" + "Age:\t\t" + getAge() + "\n"
-				+ "Subdivision:\t" + getSubdivision() + "\n" + "Position:\t" + getPost() + "\n" + "Hours Worked:\t"
+				+ "Subdivision:\t" + getSubdivision() + "\n" + "Position:\t" + post + "\n" + "Hours Worked:\t"
 				+ getHoursWorked() + "\n" + "Working Area:\t" + getWorkingArea() + "\n" + "ID:\t\t" + getId() + "\n "
-				+ introduceYourself() + "I am an employee of the support staff in the position of " + getPost()
+				+ introduceYourself() + "I am an employee of the support staff in the position of " + post
 				+ "\nI love this job because of the adequate schedule and good pay.";
 	}
 
@@ -39,8 +39,4 @@ class Cleaner extends Employee implements Identifiable {
 		this.workingArea = workingArea;
 	}
 
-	@Override
-	public long myNumberCard() {
-		return getNumberCard();
-	}
 }

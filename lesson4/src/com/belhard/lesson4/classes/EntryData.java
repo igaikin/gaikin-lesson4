@@ -1,5 +1,7 @@
 package com.belhard.lesson4.classes;
 
+import java.math.BigDecimal;
+
 public class EntryData {
 
 	public static void main(String[] args) {
@@ -15,8 +17,11 @@ public class EntryData {
 			Student students7 = new Student("Josef", "Stalin", 22, 1, "Tyranny", 13);
 			Student students8 = new Student("Alesandro", "Shoushenk", 23, 1, "Tyranny", 13);
 
-			Group group = new Group("EAR", 13);
+			teacher0.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher0.setSalaryEmployee(AccountantUtil.allowancePosition(teacher0));
+			AccountantUtil.increaseAcademicSalary(teacher0);
 
+			Group group = new Group("EAR", 13);
 			group.addStudent(students1);
 			group.addStudent(students2);
 			group.addStudent(students3);
@@ -65,16 +70,35 @@ public class EntryData {
 			chair.addTeachers(teacher8);
 			chair.addTeachers(teacher9);
 
-//			AccountantUtil.increaseAcademicSalary(teacher0);
-//			AccountantUtil.increaseAcademicSalary(teacher1);
-//			AccountantUtil.increaseAcademicSalary(teacher2);
-//			AccountantUtil.increaseAcademicSalary(teacher3);
-//			AccountantUtil.increaseAcademicSalary(teacher4);
-//			AccountantUtil.increaseAcademicSalary(teacher5);
-//			AccountantUtil.increaseAcademicSalary(teacher6);
-//			AccountantUtil.increaseAcademicSalary(teacher7);
-//			AccountantUtil.increaseAcademicSalary(teacher8);
-//			AccountantUtil.increaseAcademicSalary(teacher9);
+			teacher1.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher2.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher3.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher4.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher5.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher6.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher7.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher8.setSalaryEmployee(BigDecimal.valueOf(500));
+			teacher9.setSalaryEmployee(BigDecimal.valueOf(500));
+			cleaner.setSalaryEmployee(BigDecimal.valueOf(350));
+			teacher1.setSalaryEmployee(AccountantUtil.allowancePosition(teacher1));
+			teacher2.setSalaryEmployee(AccountantUtil.allowancePosition(teacher2));
+			teacher3.setSalaryEmployee(AccountantUtil.allowancePosition(teacher3));
+			teacher4.setSalaryEmployee(AccountantUtil.allowancePosition(teacher4));
+			teacher5.setSalaryEmployee(AccountantUtil.allowancePosition(teacher5));
+			teacher6.setSalaryEmployee(AccountantUtil.allowancePosition(teacher6));
+			teacher7.setSalaryEmployee(AccountantUtil.allowancePosition(teacher7));
+			teacher8.setSalaryEmployee(AccountantUtil.allowancePosition(teacher8));
+			teacher9.setSalaryEmployee(AccountantUtil.allowancePosition(teacher9));
+
+			AccountantUtil.increaseAcademicSalary(teacher1);
+			AccountantUtil.increaseAcademicSalary(teacher2);
+			AccountantUtil.increaseAcademicSalary(teacher3);
+			AccountantUtil.increaseAcademicSalary(teacher4);
+			AccountantUtil.increaseAcademicSalary(teacher5);
+			AccountantUtil.increaseAcademicSalary(teacher6);
+			AccountantUtil.increaseAcademicSalary(teacher7);
+			AccountantUtil.increaseAcademicSalary(teacher8);
+			AccountantUtil.increaseAcademicSalary(teacher9);
 			chair.setName("ESTABLISHING A REGIME");
 
 			System.out.println(chair.toString());

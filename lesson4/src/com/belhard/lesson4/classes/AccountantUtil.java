@@ -53,22 +53,22 @@ public class AccountantUtil {
 		AcademicDegree degree = teacher.academicDegree;
 		if (degree != null) {
 			BigDecimal salaryEmployee = teacher.getSalaryEmployee();
-			if (degree.equals(AcademicDegree.DOCTOR)) {
+			if (degree == (AcademicDegree.DOCTOR)) {
 				salaryEmployee = salaryEmployee.add(BigDecimal.valueOf(500));
 				return salaryEmployee;
-			} else if (degree.equals(AcademicDegree.CANDIDATE)) {
+			} else if (degree == (AcademicDegree.CANDIDATE)) {
 				salaryEmployee = salaryEmployee.add(BigDecimal.valueOf(400));
 				return salaryEmployee;
-			} else if (degree.equals(AcademicDegree.PROFESSOR)) {
+			} else if (degree == (AcademicDegree.PROFESSOR)) {
 				salaryEmployee = salaryEmployee.add(BigDecimal.valueOf(300));
 				return salaryEmployee;
-			} else if (degree.equals(AcademicDegree.MASTER)) {
+			} else if (degree == (AcademicDegree.MASTER)) {
 				salaryEmployee = salaryEmployee.add(BigDecimal.valueOf(200));
 				return salaryEmployee;
-			} else if (degree.equals(AcademicDegree.ASSISTANT_PROFESSOR)) {
+			} else if (degree == (AcademicDegree.ASSISTANT_PROFESSOR)) {
 				salaryEmployee = salaryEmployee.add(BigDecimal.valueOf(150));
 				return salaryEmployee;
-			} else if (degree.equals(AcademicDegree.BACHELOR_OF_BUSINES_ADMINISTRATION)) {
+			} else if (degree == (AcademicDegree.BACHELOR_OF_BUSINES_ADMINISTRATION)) {
 				salaryEmployee = salaryEmployee.add(BigDecimal.valueOf(100));
 				return salaryEmployee;
 			} else {

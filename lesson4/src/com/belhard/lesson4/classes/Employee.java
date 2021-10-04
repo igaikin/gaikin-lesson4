@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 abstract class Employee extends Person {
 	private String subdivision;
 	private int hoursWorked;
-	private BigDecimal salaryEmployee = BigDecimal.valueOf(700);
+	private BigDecimal salaryEmployee = BigDecimal.valueOf(0);
 	public Post post;
 
 	public enum Post {
@@ -19,7 +19,6 @@ abstract class Employee extends Person {
 		this.post = post;
 		this.hoursWorked = hoursWorked;
 		this.subdivision = subdivision;
-		this.salaryEmployee = salaryEmployee;
 
 	}
 

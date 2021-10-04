@@ -13,15 +13,13 @@ class Teacher extends Employee implements Identifiable {
 		DOCTOR, CANDIDATE, PROFESSOR, MASTER, ASSISTANT_PROFESSOR, BACHELOR_OF_BUSINES_ADMINISTRATION;
 	}
 
-	public Teacher(long id, String firstName, String lastName, int age, String subdivision,
-			AcademicDegree academicDegree, Post post, int hoursWorked, String department, int curatorOfTheGroup,
-			BigDecimal salaryTeacher) {
+	public Teacher(String firstName, String lastName, int age, String subdivision, AcademicDegree academicDegree,
+			Post post, int hoursWorked, String department, int curatorOfTheGroup) {
 
-		super(id, firstName, lastName, age, subdivision, hoursWorked, post, salaryTeacher);
+		super(firstName, lastName, age, subdivision, hoursWorked, post);
 		this.department = department;
 		this.academicDegree = academicDegree;
 		this.curatorOfTheGroup = curatorOfTheGroup;
-		this.salaryTeacher = salaryTeacher;
 	}
 
 	public String toString() {
@@ -29,7 +27,7 @@ class Teacher extends Employee implements Identifiable {
 				+ "\nSubdivision:\t" + getSubdivision() + "\n" + "Post:\t\t" + post + "\n" + "Department:\t"
 				+ getDepartment() + "\n" + "Academic Degree: " + academicDegree + "\n" + "ID:\t\t" + getId() + "\n"
 				+ "Curator Group:\t" + getCuratorOfTheGroup() + "\n" + "Hours Worked:\t" + getHoursWorked() + "\n"
-				+ "SALARY:\t\t" + getSalaryTeacher() + "\n___________________________________";
+				+ "Salary:\t\t" + getSalaryEmployee() + "\n___________________________________";
 	}
 
 	@Override

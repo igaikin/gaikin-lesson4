@@ -5,9 +5,9 @@ public class Student extends Person implements Identifiable {
 	private int course;
 	private int group;
 
-	public Student(long id, String firstName, String lastName, int age, int course, String faculty, int group) {
+	public Student(String firstName, String lastName, int age, int course, String faculty, int group) {
 
-		super(id, firstName, lastName, age);
+		super(firstName, lastName, age);
 		this.course = course;
 		this.faculty = faculty;
 		this.group = group;

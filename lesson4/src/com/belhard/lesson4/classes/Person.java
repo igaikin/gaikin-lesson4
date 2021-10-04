@@ -9,7 +9,7 @@ abstract class Person {
 
 	public abstract String introduceYourself();
 
-	public Person(long id, String firstName, String lastName, int age) {
+	public Person(String firstName, String lastName, int age) {
 		id = (long) (Math.random() * Long.MAX_VALUE);
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -50,7 +50,4 @@ abstract class Person {
 		this.age = age;
 	}
 
-	public long id() {
-		return 0;
-	}
 }

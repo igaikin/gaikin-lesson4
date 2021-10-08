@@ -72,12 +72,12 @@ public class Chair {
 		BigDecimal allSalary = new BigDecimal("0");
 		for (int i = 0; i < teacher.length; i++) {
 			if (teacher[i] != null) {
-				allSalaries = allSalaries.add(teacher[i].getSalaryEmployee());
+				allSalaries = allSalaries.add(teacher[i].getSalary());
 
 			}
 
 		}
-		allSalary = allSalaries.add(cleaner.getSalaryEmployee());
+		allSalary = allSalaries.add(cleaner.getSalary());
 		return allSalary;
 	}
 

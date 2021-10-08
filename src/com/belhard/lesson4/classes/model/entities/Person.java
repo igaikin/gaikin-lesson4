@@ -1,19 +1,21 @@
 package com.belhard.lesson4.classes.model.entities;
 
+import java.util.Date;
+
 public abstract class Person {
 
     private long id;
     private String firstName;
     private String lastName;
-    private int age;
+    private Date dateOfBirth;
 
     public abstract String introduceYourself();
 
-    public Person(String firstName, String lastName, int age) {
+    public Person(String firstName, String lastName, Date dateOfBirth) {
         id = (long) (Math.random() * Long.MAX_VALUE);
         this.firstName = firstName;
         this.lastName = lastName;
-        this.setAge(age);
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFirstName() {
@@ -42,12 +44,11 @@ public abstract class Person {
         this.id = id;
     }
 
-    public int getAge() {
-        return age;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
-
 }

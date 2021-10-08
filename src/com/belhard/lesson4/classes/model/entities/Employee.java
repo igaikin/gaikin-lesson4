@@ -1,22 +1,21 @@
 package com.belhard.lesson4.classes.model.entities;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public abstract class Employee extends Person {
     private String subdivision;
     private int hoursWorked;
-    private BigDecimal salaryEmployee = BigDecimal.valueOf(0);
-    public Post post;
+    private BigDecimal salary = BigDecimal.valueOf(0); //FIXME introduce new class Salary { BDecimal amount, Currency currency }
+    public Position position;
 
-    public enum Post {
+    public enum Position {
         HEAD_OF_DEPARTMENT, DEPUTY, TEACHER, SENIOR_LECTURER, ASSISTANT, CLEANER;
-
     }
 
-    public Employee(String firstName, String lastName, int age, String subdivision, int hoursWorked, Post post) {
-
-        super(firstName, lastName, age);
-        this.post = post;
+    public Employee(String firstName, String lastName, Date dateOfBirth, String subdivision, int hoursWorked, Position position) {
+        super(firstName, lastName, dateOfBirth);
+        this.position = position;
         this.hoursWorked = hoursWorked;
         this.subdivision = subdivision;
 
@@ -24,17 +23,17 @@ public abstract class Employee extends Person {
 
     @Override
     public String introduceYourself() {
-        return "\nHi! My name is " + getFirstName() + " " + getLastName() + "," + ". I`m " + post
-                + " this University. I'm " + getAge() + " years old.\n";
+        return "\nHi! My name is " + getFirstName() + " " + getLastName() + "," + ". I`m " + position
+                + " this University. I'm " + getDateOfBirth() + " years old.\n";
 
     }
 
-    public BigDecimal getSalaryEmployee() {
-        return salaryEmployee;
+    public BigDecimal getSalary() {
+        return salary;
     }
 
-    public void setSalaryEmployee(BigDecimal salaryEmployee) {
-        this.salaryEmployee = salaryEmployee;
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
     }
 
     public int getHoursWorked() {

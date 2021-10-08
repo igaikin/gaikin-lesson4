@@ -14,6 +14,9 @@ public class Group {
     int count = 0;
     float result;
 
+    public Group() {
+    }
+
     public Group(String name, int i) {
         this.name = name;
         students = new DynamicArray();
@@ -23,7 +26,7 @@ public class Group {
     public String toString() {
         String str = "\t******* G R O U P *******\n\t-----------" + name + "------------" + "\n\n";
         if (teacher != null) {
-            str = str + teacher.toString() + "\n";
+            str = str + teacher + "\n";
         }
         int util = 1;
         for (int i = 0; i < students.toArray().length; i++) {

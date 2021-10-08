@@ -9,60 +9,63 @@ import com.belhard.lesson4.classes.model.groups.Group;
 import com.belhard.lesson4.classes.service.util.AccountantUtil;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Application {
 
     public static void main(String[] args) {
+        //FIXME add Address {String city, street, int house, String block, int flat ...}
+        Group group = new Group("EAR", 13);//FIXME i ? name and number should be separated
+        group.setName("13");
 
-        Teacher teacher0 = new Teacher("Irod", "Great", 58, "Stuff Teacher", Teacher.AcademicDegree.DOCTOR,
-                Employee.Post.HEAD_OF_DEPARTMENT, 75, "Establishing a regime", 13);
-        Student students1 = new Student("Muamar", "Kadaffi", 22, 1, "Tyranny", 13);
-        Student students2 = new Student("Usama", "benLaden", 20, 1, "Tyranny", 13);
-        Student students3 = new Student("Adolf", "Hitler", 23, 1, "Tyranny", 13);
-        Student students4 = new Student("Sadam", "Husein", 18, 1, "Tyranny", 13);
-        Student students5 = new Student("Bashar", "Assad", 24, 1, "Tyranny", 13);
-        Student students6 = new Student("Iddi", "Amin", 22, 1, "Tyranny", 13);
-        Student students7 = new Student("Josef", "Stalin", 22, 1, "Tyranny", 13);
-        Student students8 = new Student("Alesandro", "Shoushenk", 23, 1, "Tyranny", 13);
+        Teacher teacher0 = new Teacher("Irod", "Great", new Date(), "Stuff Teacher", Teacher.AcademicDegree.DOCTOR,
+                Employee.Position.HEAD_OF_DEPARTMENT, 75, "Establishing a regime", group);//FIXME the same as student (add to group)
+        Student students1 = new Student("Muamar", "Kadaffi", new Date(), 1, "Tyranny", group);
+        Student students2 = new Student("Usama", "benLaden", new Date(), 1, "Tyranny", group);
+        Student students3 = new Student("Adolf", "Hitler", new Date(), 1, "Tyranny", group);
+        Student students4 = new Student("Sadam", "Husein", new Date(), 1, "Tyranny", group);
+        Student students5 = new Student("Bashar", "Assad", new Date(), 1, "Tyranny", group);
+        Student students6 = new Student("Iddi", "Amin", new Date(), 1, "Tyranny", group);
+        Student students7 = new Student("Josef", "Stalin", new Date(), 1, "Tyranny", group);
+        Student students8 = new Student("Alesandro", "Shoushenk", new Date(), 1, "Tyranny", group);
 
-        teacher0.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher0.setSalaryEmployee(AccountantUtil.allowancePosition(teacher0));
+        teacher0.setSalary(BigDecimal.valueOf(500));
+        teacher0.setSalary(AccountantUtil.allowancePosition(teacher0));
         AccountantUtil.increaseAcademicSalary(teacher0);
 
-        Group group = new Group("EAR", 13);
-        group.addStudent(students1);
-        group.addStudent(students2);
-        group.addStudent(students3);
-        group.addStudent(students4);
-        group.addStudent(students5);
-        group.addStudent(students6);
-        group.addStudent(students7);
-        group.addStudent(students8);
-        group.setTeacher(teacher0);
-        group.setName("13");
+//        group.addStudent(students1);
+//        group.addStudent(students2);
+//        group.addStudent(students3);
+//        group.addStudent(students4);
+//        group.addStudent(students5);
+//        group.addStudent(students6);
+//        group.addStudent(students7);
+//        group.addStudent(students8);
+        group.setTeacher(teacher0);//FIXME the same as student (add to group)
+
 
         System.out.println(group);
         System.out.println();
 
-        Teacher teacher1 = new Teacher("Vladimir", "Lenin", 58, "Stuff Teacher", Teacher.AcademicDegree.DOCTOR,
-                Employee.Post.DEPUTY, 150, "EAR", 0);
-        Teacher teacher2 = new Teacher("Nikita", "Chruschev", 57, "Stuff Teacher", Teacher.AcademicDegree.DOCTOR,
-                Employee.Post.DEPUTY, 160, "EAR", 0);
-        Teacher teacher3 = new Teacher("Konstantin", "Chernenko", 56, "Stuff Teacher",
-                Teacher.AcademicDegree.CANDIDATE, Employee.Post.TEACHER, 32, "EAR", 0);
-        Teacher teacher4 = new Teacher("Georgiy", "Malenkov", 55, "Stuff Teacher", Teacher.AcademicDegree.PROFESSOR,
-                Employee.Post.TEACHER, 140, "EAR", 0);
-        Teacher teacher5 = new Teacher("Uriy", "Andropov", 54, "Stuff Teacher", Teacher.AcademicDegree.MASTER,
-                Employee.Post.TEACHER, 160, "EAR", 0);
-        Teacher teacher6 = new Teacher("Leonid", "Brezhnev", 53, "Stuff Teacher", Teacher.AcademicDegree.MASTER,
-                Employee.Post.TEACHER, 150, "EAR", 0);
-        Teacher teacher7 = new Teacher("Michail", "Gorbachev", 52, "Stuff Teacher",
-                Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Post.SENIOR_LECTURER, 140, "EAR", 0);
-        Teacher teacher8 = new Teacher("Vladimir", "Putin", 51, "Stuff Teacher",
-                Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Post.SENIOR_LECTURER, 160, "EAR", 0);
-        Teacher teacher9 = new Teacher("Dmitriy", "Medvedev", 50, "Stuff Teacher",
-                Teacher.AcademicDegree.BACHELOR_OF_BUSINES_ADMINISTRATION, Employee.Post.ASSISTANT, 140, "EAR", 0);
-        Cleaner cleaner = new Cleaner("Petr", "Poroshenko", 68, "Working stuff", Employee.Post.CLEANER, 160,
+        Teacher teacher1 = new Teacher("Vladimir", "Lenin", new Date(), "Stuff Teacher", Teacher.AcademicDegree.DOCTOR,
+                Employee.Position.DEPUTY, 150, "EAR", new Group());
+        Teacher teacher2 = new Teacher("Nikita", "Chruschev", new Date(), "Stuff Teacher", Teacher.AcademicDegree.DOCTOR,
+                Employee.Position.DEPUTY, 160, "EAR", new Group());
+        Teacher teacher3 = new Teacher("Konstantin", "Chernenko", new Date(), "Stuff Teacher",
+                Teacher.AcademicDegree.CANDIDATE, Employee.Position.TEACHER, 32, "EAR", new Group());
+        Teacher teacher4 = new Teacher("Georgiy", "Malenkov", new Date(), "Stuff Teacher", Teacher.AcademicDegree.PROFESSOR,
+                Employee.Position.TEACHER, 140, "EAR", new Group());
+        Teacher teacher5 = new Teacher("Uriy", "Andropov", new Date(), "Stuff Teacher", Teacher.AcademicDegree.MASTER,
+                Employee.Position.TEACHER, 160, "EAR", new Group());
+        Teacher teacher6 = new Teacher("Leonid", "Brezhnev", new Date(), "Stuff Teacher", Teacher.AcademicDegree.MASTER,
+                Employee.Position.TEACHER, 150, "EAR", new Group());
+        Teacher teacher7 = new Teacher("Michail", "Gorbachev", new Date(), "Stuff Teacher",
+                Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Position.SENIOR_LECTURER, 140, "EAR", new Group());
+        Teacher teacher8 = new Teacher("Vladimir", "Putin", new Date(), "Stuff Teacher",
+                Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Position.SENIOR_LECTURER, 160, "EAR", new Group());
+        Teacher teacher9 = new Teacher("Dmitriy", "Medvedev", new Date(), "Stuff Teacher",
+                Teacher.AcademicDegree.BACHELOR_OF_BUSINESS_ADMINISTRATION, Employee.Position.ASSISTANT, 140, "EAR", new Group());
+        Cleaner cleaner = new Cleaner("Petr", "Poroshenko", new Date(), "Working stuff", Employee.Position.CLEANER, 160,
                 "All rooms of Department Establishing a regime");
 
         Chair chair = new Chair("ESTABLISHING A REGIME");
@@ -78,25 +81,25 @@ public class Application {
         chair.addTeachers(teacher8);
         chair.addTeachers(teacher9);
 
-        teacher1.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher2.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher3.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher4.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher5.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher6.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher7.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher8.setSalaryEmployee(BigDecimal.valueOf(500));
-        teacher9.setSalaryEmployee(BigDecimal.valueOf(500));
-        cleaner.setSalaryEmployee(BigDecimal.valueOf(350));
-        teacher1.setSalaryEmployee(AccountantUtil.allowancePosition(teacher1));
-        teacher2.setSalaryEmployee(AccountantUtil.allowancePosition(teacher2));
-        teacher3.setSalaryEmployee(AccountantUtil.allowancePosition(teacher3));
-        teacher4.setSalaryEmployee(AccountantUtil.allowancePosition(teacher4));
-        teacher5.setSalaryEmployee(AccountantUtil.allowancePosition(teacher5));
-        teacher6.setSalaryEmployee(AccountantUtil.allowancePosition(teacher6));
-        teacher7.setSalaryEmployee(AccountantUtil.allowancePosition(teacher7));
-        teacher8.setSalaryEmployee(AccountantUtil.allowancePosition(teacher8));
-        teacher9.setSalaryEmployee(AccountantUtil.allowancePosition(teacher9));
+        teacher1.setSalary(BigDecimal.valueOf(500));
+        teacher2.setSalary(BigDecimal.valueOf(500));
+        teacher3.setSalary(BigDecimal.valueOf(500));
+        teacher4.setSalary(BigDecimal.valueOf(500));
+        teacher5.setSalary(BigDecimal.valueOf(500));
+        teacher6.setSalary(BigDecimal.valueOf(500));
+        teacher7.setSalary(BigDecimal.valueOf(500));
+        teacher8.setSalary(BigDecimal.valueOf(500));
+        teacher9.setSalary(BigDecimal.valueOf(500));
+        cleaner.setSalary(BigDecimal.valueOf(350));
+        teacher1.setSalary(AccountantUtil.allowancePosition(teacher1));
+        teacher2.setSalary(AccountantUtil.allowancePosition(teacher2));
+        teacher3.setSalary(AccountantUtil.allowancePosition(teacher3));
+        teacher4.setSalary(AccountantUtil.allowancePosition(teacher4));
+        teacher5.setSalary(AccountantUtil.allowancePosition(teacher5));
+        teacher6.setSalary(AccountantUtil.allowancePosition(teacher6));
+        teacher7.setSalary(AccountantUtil.allowancePosition(teacher7));
+        teacher8.setSalary(AccountantUtil.allowancePosition(teacher8));
+        teacher9.setSalary(AccountantUtil.allowancePosition(teacher9));
 
         AccountantUtil.increaseAcademicSalary(teacher1);
         AccountantUtil.increaseAcademicSalary(teacher2);

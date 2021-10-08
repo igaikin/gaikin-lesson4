@@ -1,11 +1,16 @@
-package com.belhard.lesson4.classes;
+package com.belhard.lesson4.classes.model.groups;
+
+import com.belhard.lesson4.classes.model.entities.Cleaner;
+import com.belhard.lesson4.classes.model.entities.Teacher;
+import com.belhard.lesson4.util.DynamicArray;
+import com.belhard.lesson4.util.MyCollection;
 
 import java.math.BigDecimal;
 
 public class Chair {
 
 	private String name;
-	private static Cleaner cleaner;
+	private static Cleaner cleaner; //FIXME!!!
 	private MyCollection teachers;
 
 	public Chair(String name) {

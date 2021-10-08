@@ -1,4 +1,4 @@
-package com.belhard.lesson4.classes;
+package com.belhard.lesson4.util;
 
 public interface MyCollection {
 

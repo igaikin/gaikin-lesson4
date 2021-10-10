@@ -2,18 +2,14 @@ package com.belhard.lesson4.util;
 
 public interface MyCollection {
 
-	int length = 0;
+    boolean add(Object obj);
 
-	int size();
+    boolean remove(Object obj);
 
-	boolean add(Object obj);
+    boolean contains(Object obj);
 
-	boolean remove(Object obj);
+    Object get();
 
-	boolean contains(Object obj);
-
-	Object get();
-
-	Object[] toArray();
+    Object[] toArray();
 
 }

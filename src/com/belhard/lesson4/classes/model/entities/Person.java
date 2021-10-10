@@ -3,7 +3,6 @@ package com.belhard.lesson4.classes.model.entities;
 import java.util.Date;
 
 public abstract class Person {
-
     private long id;
     private String firstName;
     private String lastName;
@@ -20,7 +19,6 @@ public abstract class Person {
 
     public String getFirstName() {
         return firstName;
-
     }
 
     public void setFirstName(String firstName) {
@@ -29,7 +27,6 @@ public abstract class Person {
 
     public String getLastName() {
         return lastName;
-
     }
 
     public void setLastName(String lastName) {

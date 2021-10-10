@@ -27,17 +27,16 @@ public class Teacher extends Employee implements Identifiable {
     }
 
     public String toString() {
-        return "\tTEACHER:\nName:\t\t" + getFirstName() + " " + getLastName() + "\nAge:\t\t" + getDateOfBirth()
-                + "\nSubdivision:\t" + getSubdivision() + "\n" + "Post:\t\t" + position + "\n" + "Department:\t"
-                + getDepartment() + "\n" + "Academic Degree: " + academicDegree + "\n" + "ID:\t\t" + getId() + "\n"
-                + "Curator Group:\t" + getGroup().getName() + "\n" + "Hours Worked:\t" + getHoursWorked() + "\n"
-                + "Salary:\t\t" + getSalary() + "\n___________________________________";
+        return String.format("TEACHER:%nName: %20s %s%nDate of Birth: %32s%nSubdivision: %19s%nPost: " +
+                        "%22s%nDepartment: %10s%nAcademic Degree: %37s%nID: %34d%nCurator Group: %8s%nHours Worked: " +
+                        "%20d%nSalary: %20.2f%n___________________________________", getFirstName(), getLastName(),
+                getDateOfBirth(), getSubdivision(), position, getDepartment(), academicDegree, getId(), getGroup().getName(), getHoursWorked(), getSalary());
     }
 
     @Override
     public String introduceYourself() {
-        return "\nHi! My name is " + getFirstName() + " " + getLastName() + "," + ". I`m " + position
-                + " this University. I'm " + getDateOfBirth() + " years old.\n";
+        return String.format("%nHi! My name is %s %s. I`m %s this University. I'm %s birth.", getFirstName(),
+                getLastName(), position, getDateOfBirth());
     }
 
     public BigDecimal getSalaryTeacher() {

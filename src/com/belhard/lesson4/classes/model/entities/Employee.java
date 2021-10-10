@@ -10,7 +10,7 @@ public abstract class Employee extends Person {
     public Position position;
 
     public enum Position {
-        HEAD_OF_DEPARTMENT, DEPUTY, TEACHER, SENIOR_LECTURER, ASSISTANT, CLEANER;
+        HEAD_OF_DEPARTMENT, DEPUTY, TEACHER, SENIOR_LECTURER, ASSISTANT, CLEANER
     }
 
     public Employee(String firstName, String lastName, Date dateOfBirth, String subdivision, int hoursWorked, Position position) {
@@ -23,9 +23,8 @@ public abstract class Employee extends Person {
 
     @Override
     public String introduceYourself() {
-        return "\nHi! My name is " + getFirstName() + " " + getLastName() + "," + ". I`m " + position
-                + " this University. I'm " + getDateOfBirth() + " years old.\n";
-
+        return String.format("%nHi! My name is %s %s. I`m %s this University. I''m %s years old.", getFirstName(),
+                getLastName(), position, getDateOfBirth());
     }
 
     public BigDecimal getSalary() {
@@ -42,7 +41,6 @@ public abstract class Employee extends Person {
 
     public void setHoursWorked(int hoursWorked) {
         this.hoursWorked = hoursWorked;
-
     }
 
     public String getSubdivision() {

@@ -15,13 +15,13 @@ public class Cleaner extends Employee implements Identifiable {
 
     }
 
-    public String toString() {//FIXME format
-        return "Cleaner:\nName:\t\t" + getFirstName() + " " + getLastName() + " " + "\n" + "Age:\t\t" + getDateOfBirth() + "\n"
-                + "Subdivision:\t" + getSubdivision() + "\n" + "Position:\t" + position + "\n" + "Hours Worked:\t"
-                + getHoursWorked() + "\n" + "Working Area:\t" + getWorkingArea() + "\n" + "Salary: \t" + ""
-                + getSalary() + "\nID:\t\t" + getId() + "\n " + introduceYourself()
-                + "I am an employee of the support staff in the position of " + position
-                + "\nI love this job because of the adequate schedule and good pay.";
+    public String toString() {
+        return String.format("Cleaner:%nName: %s %s%nDate of Birth: %s%nSubdivision: %s%n" +
+                        "Position: %s%nHours Worked: %d%nWorking Area:%s%nSalary:%.2f%nID: %d%n%s%nI am an " +
+                        "employee of the support staff in the position of %s %nI love this job because of the " +
+                        "adequate schedule and good pay.", getFirstName(), getLastName(), getDateOfBirth(),
+                getSubdivision(), position, getHoursWorked(), getWorkingArea(), getSalary(), getId(),
+                introduceYourself(), position);
     }
 
     public String getWorkingArea() {

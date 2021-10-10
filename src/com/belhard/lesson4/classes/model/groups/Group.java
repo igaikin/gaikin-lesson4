@@ -10,9 +10,6 @@ public class Group {
     private String name;
     private static Teacher teacher;
     private MyCollection students;
-    int sum = 0;
-    int count = 0;
-    float result;
 
     public Group() {
     }
@@ -24,7 +21,7 @@ public class Group {
 
     @Override
     public String toString() {
-        String str = "\t******* G R O U P *******\n\t-----------" + name + "------------" + "\n\n";
+        String str = "\t******* G R O U P *******\n\t-----------" + getName() + "------------\n\n";
         if (teacher != null) {
             str = str + teacher + "\n";
         }

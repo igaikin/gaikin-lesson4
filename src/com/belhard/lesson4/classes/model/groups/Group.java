@@ -11,10 +11,7 @@ public class Group {
     private static Teacher teacher;
     private MyCollection students;
 
-    public Group() {
-    }
-
-    public Group(String name, int i) {
+    public Group(String name) {
         this.name = name;
         students = new DynamicArray();
     }
@@ -41,9 +38,7 @@ public class Group {
     }
 
     public void addStudent(Student student) {
-
         students.add(student);
-
     }
 
     public void removeStudent(Student student) {
@@ -66,7 +61,7 @@ public class Group {
         Group.teacher = teacher;
     }
 
-    public boolean delTeacher(long id) {
+    public boolean removeTeacher(long id) {
         if (teacher != null && teacher.getId() == id) {
             teacher = null;
         }

@@ -22,15 +22,17 @@ public class Student extends Person implements Identifiable {
 
     @Override
     public String toString() {
-        return String.format("Student:%nName: %s %s%nAge: %s%nCourse: %d%nFaculty: %s%nGroup: %s%nID: %d%n%s%n" +
-                        "- - - - - - - - - - - - - - - - - - - ", getFirstName(), getLastName(), getDateOfBirth(),
+        return String.format("Student:%nName: %s%nDate of birth: %s%nCourse: %d%nFaculty: %s%nGroup: %s%nID: %d%n%s%n" +
+                        "- - - - - - - - - - - - - - - - - - - ", getFirstName() + " " + getLastName(), getDateOfBirth(),
                 getCourse(), getFaculty(), getGroup().getName(), getId(), introduceYourself());
     }
 
     @Override
-    public String introduceYourself() {//FIXME Group
+    public String introduceYourself() {
         return String.format("%nHi! My name is %s %s.%nI am a university student, I am %s " +
-                "years student of the .", getFirstName(), getLastName(), getCourse(), getFaculty(), getGroup());
+                        "years student of the %s faculty %ss groups.", getFirstName(), getLastName(), getCourse(),
+                getFaculty(),
+                group.getName());
     }
 
     public String getFaculty() {

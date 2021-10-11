@@ -17,20 +17,22 @@ public class Teacher extends Employee implements Identifiable {
         DOCTOR, CANDIDATE, PROFESSOR, MASTER, ASSISTANT_PROFESSOR, BACHELOR_OF_BUSINESS_ADMINISTRATION
     }
 
-    public Teacher(String firstName, String lastName, Date dateOfBirth, String subdivision, AcademicDegree academicDegree,
+    public Teacher(String firstName, String lastName, Date dateOfBirth, Subdivision subdivision, AcademicDegree academicDegree,
                    Position position, int hoursWorked, String department, Group group) {
 
         super(firstName, lastName, dateOfBirth, subdivision, hoursWorked, position);
         this.department = department;
         this.academicDegree = academicDegree;
         this.group = group;
+        group.setTeacher(this);
     }
 
     public String toString() {
         return String.format("TEACHER:%nName: %20s %s%nDate of Birth: %32s%nSubdivision: %19s%nPost: " +
                         "%22s%nDepartment: %10s%nAcademic Degree: %37s%nID: %34d%nCurator Group: %8s%nHours Worked: " +
                         "%20d%nSalary: %20.2f%n___________________________________", getFirstName(), getLastName(),
-                getDateOfBirth(), getSubdivision(), position, getDepartment(), academicDegree, getId(), getGroup().getName(), getHoursWorked(), getSalary());
+                getDateOfBirth(), subdivision, position, getDepartment(), academicDegree, getId(),
+                getGroup().getName(), getHoursWorked(), getSalary());
     }
 
     @Override

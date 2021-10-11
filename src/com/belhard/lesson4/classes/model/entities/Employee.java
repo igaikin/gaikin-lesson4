@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public abstract class Employee extends Person {
-    private String subdivision;
+    public Subdivision subdivision;
     private int hoursWorked;
     private BigDecimal salary = BigDecimal.valueOf(0); //FIXME introduce new class Salary { BDecimal amount, Currency currency }
     public Position position;
@@ -13,7 +13,12 @@ public abstract class Employee extends Person {
         HEAD_OF_DEPARTMENT, DEPUTY, TEACHER, SENIOR_LECTURER, ASSISTANT, CLEANER
     }
 
-    public Employee(String firstName, String lastName, Date dateOfBirth, String subdivision, int hoursWorked, Position position) {
+    public enum Subdivision {
+        WORK_STAFF, TEACHERS_STAFF
+    }
+
+    public Employee(String firstName, String lastName, Date dateOfBirth, Subdivision subdivision, int hoursWorked,
+                    Position position) {
         super(firstName, lastName, dateOfBirth);
         this.position = position;
         this.hoursWorked = hoursWorked;
@@ -42,13 +47,4 @@ public abstract class Employee extends Person {
     public void setHoursWorked(int hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
-
-    public String getSubdivision() {
-        return subdivision;
-    }
-
-    public void setSubdivision(String subdivision) {
-        this.subdivision = subdivision;
-    }
-
 }

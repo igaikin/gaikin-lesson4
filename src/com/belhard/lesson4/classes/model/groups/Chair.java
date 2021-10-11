@@ -16,7 +16,6 @@ public class Chair {
     public Chair(String name) {
 
         this.name = name;
-
         teachers = new DynamicArray();
     }
 

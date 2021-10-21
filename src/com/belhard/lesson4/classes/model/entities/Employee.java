@@ -1,7 +1,6 @@
 package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
-import com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,11 +12,30 @@ public abstract class Employee extends Person {
     public Position position;
 
     public enum Position {
-        HEAD_OF_DEPARTMENT, DEPUTY, TEACHER, SENIOR_LECTURER, ASSISTANT, CLEANER
+        HEAD_OF_DEPARTMENT("Head of department"), DEPUTY("Deputy"), TEACHER("Teacher"),
+        SENIOR_LECTURER("Senior Lecturer"), ASSISTANT("Assistant"), CLEANER("Cleaner");
+        private final String name;
+
+        Position(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 
     public enum Subdivision {
-        WORK_STAFF, TEACHERS_STAFF
+        WORK_STAFF("Worker"), TEACHERS_STAFF("Teacher");
+        private final String name;
+
+        Subdivision(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 
     public Employee(String firstName, String lastName, Date dateOfBirth, Address address,

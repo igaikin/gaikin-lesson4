@@ -34,10 +34,9 @@ public class Teacher extends Employee implements Identifiable {
 
     }
 
-    public Teacher(String firstName, String lastName, Date dateOfBirth, Address.Country country, Subdivision subdivision, AcademicDegree academicDegree,
-                   Position position, int hoursWorked, String department, Group group) {
-
-        super(firstName, lastName, dateOfBirth, country, subdivision, hoursWorked, position);
+    public Teacher(String firstName, String lastName, Date dateOfBirth, Address address, Subdivision subdivision,
+                   AcademicDegree academicDegree, Position position, int hoursWorked, String department, Group group) {
+        super(firstName, lastName, dateOfBirth, address, subdivision, hoursWorked, position);
         this.department = department;
         this.academicDegree = academicDegree;
         this.group = group;

@@ -1,13 +1,18 @@
 package com.belhard.lesson4.classes;
 
-import com.belhard.lesson4.classes.model.entities.*;
-import com.belhard.lesson4.classes.model.groups.*;
+import com.belhard.lesson4.classes.model.entities.Cleaner;
+import com.belhard.lesson4.classes.model.entities.Employee;
+import com.belhard.lesson4.classes.model.entities.Student;
+import com.belhard.lesson4.classes.model.entities.Teacher;
+import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
+import com.belhard.lesson4.classes.model.groups.Chair;
+import com.belhard.lesson4.classes.model.groups.Group;
 import com.belhard.lesson4.classes.service.util.AccountantUtil;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-import static com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country.*;
+import static com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country.BLR;
 
 public class Application {
 
@@ -17,41 +22,44 @@ public class Application {
         Group group = new Group("13");
         Chair chair = new Chair("ESTABLISHING A REGIME");
 
-        Teacher teacher0 = new Teacher("Irod", "Great", new Date(), UKR,
+        //FIXME HOTFIX
+        Address address = new Address(BLR, "Minsk", "Nezalezhnosti", 17);
+
+        Teacher teacher0 = new Teacher("Irod", "Great", new Date(), address,
                 Employee.Subdivision.TEACHERS_STAFF,
                 Teacher.AcademicDegree.DOCTOR,
                 Employee.Position.HEAD_OF_DEPARTMENT, 75, "Establishing a regime", group);
-        Student students1 = new Student("Muamar", "Kadaffi", new Date(), BLR,1, "Tyranny", group);
-        Student students2 = new Student("Usama", "benLaden", new Date(), BLR,1, "Tyranny", group);
-        Student students3 = new Student("Adolf", "Hitler", new Date(), BLR,1, "Tyranny", group);
-        Student students4 = new Student("Sadam", "Husein", new Date(), BLR,1, "Tyranny", group);
-        Student students5 = new Student("Bashar", "Assad", new Date(), BLR,1, "Tyranny", group);
-        Student students6 = new Student("Iddi", "Amin", new Date(), BLR,1, "Tyranny", group);
-        Student students7 = new Student("Josef", "Stalin", new Date(), BLR,1, "Tyranny", group);
-        Student students8 = new Student("Alesandro", "Shoushenk", new Date(), BLR,1, "Tyranny", group);
+        Student students1 = new Student("Muamar", "Kadaffi", new Date(), address, 1, "Tyranny", group);
+        Student students2 = new Student("Usama", "benLaden", new Date(), address, 1, "Tyranny", group);
+        Student students3 = new Student("Adolf", "Hitler", new Date(), address, 1, "Tyranny", group);
+        Student students4 = new Student("Sadam", "Husein", new Date(), address, 1, "Tyranny", group);
+        Student students5 = new Student("Bashar", "Assad", new Date(), address, 1, "Tyranny", group);
+        Student students6 = new Student("Iddi", "Amin", new Date(), address, 1, "Tyranny", group);
+        Student students7 = new Student("Josef", "Stalin", new Date(), address, 1, "Tyranny", group);
+        Student students8 = new Student("Alesandro", "Shoushenk", new Date(), address, 1, "Tyranny", group);
 
 
-        Teacher teacher1 = new Teacher("Vladimir", "Lenin", new Date(), BLR,
+        Teacher teacher1 = new Teacher("Vladimir", "Lenin", new Date(), address,
                 Employee.Subdivision.TEACHERS_STAFF,
                 Teacher.AcademicDegree.DOCTOR, Employee.Position.DEPUTY, 150, "EAR", new Group());
-        Teacher teacher2 = new Teacher("Nikita", "Chruschev", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF,
+        Teacher teacher2 = new Teacher("Nikita", "Chruschev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
                 Teacher.AcademicDegree.DOCTOR, Employee.Position.DEPUTY, 160, "EAR", new Group());
-        Teacher teacher3 = new Teacher("Konstantin", "Chernenko", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF,
+        Teacher teacher3 = new Teacher("Konstantin", "Chernenko", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
                 Teacher.AcademicDegree.CANDIDATE, Employee.Position.TEACHER, 32, "EAR", new Group());
-        Teacher teacher4 = new Teacher("Georgiy", "Malenkov", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.PROFESSOR,
+        Teacher teacher4 = new Teacher("Georgiy", "Malenkov", new Date(), address, Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.PROFESSOR,
                 Employee.Position.TEACHER, 140, "EAR", new Group());
-        Teacher teacher5 = new Teacher("Uriy", "Andropov", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
+        Teacher teacher5 = new Teacher("Uriy", "Andropov", new Date(), address, Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
                 Employee.Position.TEACHER, 160, "EAR", new Group());
-        Teacher teacher6 = new Teacher("Leonid", "Brezhnev", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
+        Teacher teacher6 = new Teacher("Leonid", "Brezhnev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
                 Employee.Position.TEACHER, 150, "EAR", new Group());
-        Teacher teacher7 = new Teacher("Michail", "Gorbachev", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF,
+        Teacher teacher7 = new Teacher("Michail", "Gorbachev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
                 Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Position.SENIOR_LECTURER, 140, "EAR", new Group());
-        Teacher teacher8 = new Teacher("Vladimir", "Putin", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF,
+        Teacher teacher8 = new Teacher("Vladimir", "Putin", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
                 Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Position.SENIOR_LECTURER, 160, "EAR", new Group());
-        Teacher teacher9 = new Teacher("Dmitriy", "Medvedev", new Date(), BLR,Employee.Subdivision.TEACHERS_STAFF,
+        Teacher teacher9 = new Teacher("Dmitriy", "Medvedev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
                 Teacher.AcademicDegree.BACHELOR_OF_BUSINESS_ADMINISTRATION, Employee.Position.ASSISTANT, 140, "EAR",
                 new Group());
-        Cleaner cleaner = new Cleaner("Petr", "Poroshenko", new Date(), BLR,Employee.Subdivision.WORK_STAFF,
+        Cleaner cleaner = new Cleaner("Petr", "Poroshenko", new Date(), address, Employee.Subdivision.WORK_STAFF,
                 Employee.Position.CLEANER, 160,
                 "All rooms of Department Establishing a regime");
 

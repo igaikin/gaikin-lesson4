@@ -6,14 +6,11 @@ import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import java.util.Date;
 
 public class Cleaner extends Employee implements Identifiable {
-
     private String workingArea;
 
-    public Cleaner(String firstName, String lastName, Date dateOfBirth, Address.Country country, Subdivision subdivision, Position position, int hoursWorked,
-                   String workingArea) {
-
-        super(firstName, lastName, dateOfBirth, country, subdivision, hoursWorked, position);
-
+    public Cleaner(String firstName, String lastName, Date dateOfBirth, Address address,
+                   Subdivision subdivision, Position position, int hoursWorked, String workingArea) {
+        super(firstName, lastName, dateOfBirth, address, subdivision, hoursWorked, position);
         this.workingArea = workingArea;
 
     }

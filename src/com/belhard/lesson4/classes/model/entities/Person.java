@@ -9,14 +9,24 @@ public abstract class Person {
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
+    private Address address;
 
-    public abstract String introduceYourself();
-
-    public Person(String firstName, String lastName, Date dateOfBirth, Address.Country country) {
+    public Person(String firstName, String lastName, Date dateOfBirth, Address address) {
         id = (long) (Math.random() * Long.MAX_VALUE);
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
+        this.address = address;
+    }
+
+    public abstract String introduceYourself();
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getFirstName() {

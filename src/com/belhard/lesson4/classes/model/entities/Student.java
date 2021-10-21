@@ -1,6 +1,7 @@
 package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.Identifiable;
+import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country;
 import com.belhard.lesson4.classes.model.groups.Group;
 
@@ -12,10 +13,9 @@ public class Student extends Person implements Identifiable {
     private Group group;
 
 
-    public Student(String firstName, String lastName, Date dateOfBirth, Country country, int course,
-                   String faculty,
+    public Student(String firstName, String lastName, Date dateOfBirth, Address address, int course, String faculty,
                    Group group) {
-        super(firstName, lastName, dateOfBirth, country);
+        super(firstName, lastName, dateOfBirth, address);
         this.course = course;
         this.faculty = faculty;
         this.group = group;
@@ -30,7 +30,7 @@ public class Student extends Person implements Identifiable {
                         + "%d%nFaculty:      "
                         + " | %s%nGroup:         | %s%nID:            | %d%n%s%n- - - - - - - - - - - - - - - - - - - "
                         + "- - - - - - - - - - ",
-                getFirstName() + " " + getLastName(), getDateOfBirth(), Country,
+                getFirstName() + " " + getLastName(), getDateOfBirth(), getAddress(),
                 getCourse(), getFaculty(), getGroup().getName(), getId(), introduceYourself());
     }
 

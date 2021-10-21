@@ -1,8 +1,8 @@
 package com.belhard.lesson4.classes.model.entities.auxiliary;
 
 public class Address {
-
     private Country country;
+
     private String city;
     private String street;
     private int house;
@@ -98,6 +98,19 @@ public class Address {
             return name;
         }
 
+
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country=" + country +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", house=" + house +
+                ", block='" + block + '\'' +
+                ", flat=" + flat +
+                '}';
     }
 
 }

@@ -1,6 +1,6 @@
 package com.belhard.lesson4.classes.model.entities;
 
-import com.belhard.lesson4.classes.model.entities.auxilary.Address.Country;
+import com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country;
 
 import java.math.BigDecimal;
 import java.util.Date;

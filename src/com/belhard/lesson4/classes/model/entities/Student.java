@@ -1,7 +1,7 @@
 package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.Identifiable;
-import com.belhard.lesson4.classes.model.entities.auxilary.Address.Country;
+import com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country;
 import com.belhard.lesson4.classes.model.groups.Group;
 
 import java.util.Date;

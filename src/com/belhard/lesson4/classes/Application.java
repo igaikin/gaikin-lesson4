@@ -1,14 +1,13 @@
 package com.belhard.lesson4.classes;
 
 import com.belhard.lesson4.classes.model.entities.*;
-import com.belhard.lesson4.classes.model.entities.auxilary.Address.*;
 import com.belhard.lesson4.classes.model.groups.*;
 import com.belhard.lesson4.classes.service.util.AccountantUtil;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-import static com.belhard.lesson4.classes.model.entities.auxilary.Address.Country.*;
+import static com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country.*;
 
 public class Application {
 

@@ -26,7 +26,7 @@ public class Student extends Person implements Identifiable {
 
     @Override
     public String toString() {
-        return String.format("Student:%nName:          | %s%nDate of birth: | %s%nAddress:       |%nCourse:        | "
+        return String.format("Student:%nName:          | %s%nDate of birth: | %s%nAddress:       |%s%nCourse:        | "
                         + "%d%nFaculty:      "
                         + " | %s%nGroup:         | %s%nID:            | %d%n%s%n- - - - - - - - - - - - - - - - - - - "
                         + "- - - - - - - - - - ",

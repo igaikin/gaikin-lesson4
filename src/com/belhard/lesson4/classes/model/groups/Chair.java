@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 public class Chair {
 
     private String name;
-    private static Cleaner cleaner; //FIXME!!!
-    private MyCollection teachers;
+    private static Cleaner cleaner;
+    private final MyCollection teachers;
 
     public Chair(String name) {
 

@@ -11,6 +11,9 @@ public class Group {
     private static Teacher teacher;
     private MyCollection students;
 
+    public Group() {
+    }
+
     public Group(String name) {
         this.name = name;
         students = new DynamicArray();

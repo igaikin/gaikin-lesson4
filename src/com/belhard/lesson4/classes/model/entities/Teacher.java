@@ -1,6 +1,7 @@
 package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.Identifiable;
+import com.belhard.lesson4.classes.model.entities.auxilary.Address;
 import com.belhard.lesson4.classes.model.groups.Group;
 
 import java.math.BigDecimal;
@@ -14,13 +15,19 @@ public class Teacher extends Employee implements Identifiable {
     public AcademicDegree academicDegree;
 
     public enum AcademicDegree {
-        DOCTOR, CANDIDATE, PROFESSOR, MASTER, ASSISTANT_PROFESSOR, BACHELOR_OF_BUSINESS_ADMINISTRATION
+
+        DOCTOR("Doctor"), CANDIDATE("Candidate"), PROFESSOR("Professor"), MASTER("Master"), ASSISTANT_PROFESSOR(
+                "Assistant Professor"), BACHELOR_OF_BUSINESS_ADMINISTRATION("Bachelor of Busines Administration");
+
+        AcademicDegree(String academicDegree) {
+
+        }
     }
 
-    public Teacher(String firstName, String lastName, Date dateOfBirth, Subdivision subdivision, AcademicDegree academicDegree,
+    public Teacher(String firstName, String lastName, Date dateOfBirth, Address.Country country, Subdivision subdivision, AcademicDegree academicDegree,
                    Position position, int hoursWorked, String department, Group group) {
 
-        super(firstName, lastName, dateOfBirth, subdivision, hoursWorked, position);
+        super(firstName, lastName, dateOfBirth, country, subdivision, hoursWorked, position);
         this.department = department;
         this.academicDegree = academicDegree;
         this.group = group;

@@ -1,5 +1,7 @@
 package com.belhard.lesson4.classes.model.entities;
 
+import com.belhard.lesson4.classes.model.entities.auxilary.Address;
+
 import java.util.Date;
 
 public abstract class Person {
@@ -10,7 +12,7 @@ public abstract class Person {
 
     public abstract String introduceYourself();
 
-    public Person(String firstName, String lastName, Date dateOfBirth) {
+    public Person(String firstName, String lastName, Date dateOfBirth, Address.Country country) {
         id = (long) (Math.random() * Long.MAX_VALUE);
         this.firstName = firstName;
         this.lastName = lastName;

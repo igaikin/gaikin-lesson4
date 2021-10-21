@@ -1,5 +1,7 @@
 package com.belhard.lesson4.classes.model.entities;
 
+import com.belhard.lesson4.classes.model.entities.auxilary.Address.*;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -17,9 +19,11 @@ public abstract class Employee extends Person {
         WORK_STAFF, TEACHERS_STAFF
     }
 
-    public Employee(String firstName, String lastName, Date dateOfBirth, Subdivision subdivision, int hoursWorked,
+    public Employee(String firstName, String lastName, Date dateOfBirth, Country country,
+                    Subdivision subdivision,
+                    int hoursWorked,
                     Position position) {
-        super(firstName, lastName, dateOfBirth);
+        super(firstName, lastName, dateOfBirth, country);
         this.position = position;
         this.hoursWorked = hoursWorked;
         this.subdivision = subdivision;

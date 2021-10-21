@@ -15,13 +15,23 @@ public class Teacher extends Employee implements Identifiable {
     public AcademicDegree academicDegree;
 
     public enum AcademicDegree {
+        DOCTOR("Doctor"),
+        CANDIDATE("Candidate"),
+        PROFESSOR("Professor"),
+        MASTER("Master"),
+        ASSISTANT_PROFESSOR("Assistant Professor"),
+        BACHELOR_OF_BUSINESS_ADMINISTRATION("Bachelor of Business Administration");
 
-        DOCTOR("Doctor"), CANDIDATE("Candidate"), PROFESSOR("Professor"), MASTER("Master"), ASSISTANT_PROFESSOR(
-                "Assistant Professor"), BACHELOR_OF_BUSINESS_ADMINISTRATION("Bachelor of Busines Administration");
+        private final String name;
 
-        AcademicDegree(String academicDegree) {
-
+        AcademicDegree(String name) {
+            this.name = name;
         }
+
+        public String getName() {
+            return name;
+        }
+
     }
 
     public Teacher(String firstName, String lastName, Date dateOfBirth, Address.Country country, Subdivision subdivision, AcademicDegree academicDegree,

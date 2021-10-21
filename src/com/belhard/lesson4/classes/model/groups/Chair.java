@@ -28,7 +28,7 @@ public class Chair {
 
         for (int i = 0; i < teachers.toArray().length; i++) {
             if (teachers.toArray()[i] != null) {
-                str = str + "\t" + util + ":  " + teachers.toArray()[i].toString() + "\n\n";
+                str = str + "\t" + util + ":  " + teachers.toArray()[i].toString() + "\n\n";//FIXME System.lineSeparator();
                 util++;
 
             } else if (teachers.toArray()[i] == null) {
@@ -41,9 +41,7 @@ public class Chair {
     }
 
     public void addTeachers(Teacher teacher) {
-
         teachers.add(teacher);
-
     }
 
     public String getName() {

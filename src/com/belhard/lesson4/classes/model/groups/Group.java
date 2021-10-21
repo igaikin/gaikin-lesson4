@@ -6,13 +6,9 @@ import com.belhard.lesson4.util.DynamicArray;
 import com.belhard.lesson4.util.MyCollection;
 
 public class Group {
-
     private String name;
-    private static Teacher teacher;
-    private MyCollection students;
-
-    public Group() {
-    }
+    private Teacher teacher;
+    private final MyCollection students;
 
     public Group(String name) {
         this.name = name;
@@ -21,30 +17,25 @@ public class Group {
 
     @Override
     public String toString() {
-        String str = "\t******* G R O U P *******\n\t-----------" + getName() + "------------\n\n";
+        StringBuilder sb = new StringBuilder("\t******* G R O U P *******\n\t-----------" + getName() + "------------\n\n");
         if (teacher != null) {
-            str = str + teacher + "\n";
+            sb.append(teacher).append("\n");
         }
         int util = 1;
         for (int i = 0; i < students.toArray().length; i++) {
-
             if (students.toArray()[i] != null) {
-                str = str + "\t" + util + ":  " + students.toArray()[i].toString() + "\n";
-                util++;
-            } else if (students.toArray()[i] == null) {
-                str = str + "\t" + util + ":  " + "STUDENT IS NOT ASSIGNED" + "\n";
+                sb.append("\t").append(util).append(":  ").append(students.toArray()[i].toString()).append("\n");
                 util++;
             }
-
         }
-        return str;
+        return sb.toString();
     }
 
-    public void addStudent(Student student) {
+    public void addStudent(Student student) {//FIXME boolean , capacity
         students.add(student);
     }
 
-    public void removeStudent(Student student) {
+    public void removeStudent(Student student) { //FIXME boolean
         students.remove(student);
     }
 
@@ -61,7 +52,7 @@ public class Group {
     }
 
     public void setTeacher(Teacher teacher) {
-        Group.teacher = teacher;
+        this.teacher = teacher;
     }
 
     public boolean removeTeacher(long id) {

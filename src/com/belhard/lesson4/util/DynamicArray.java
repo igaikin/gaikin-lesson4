@@ -1,6 +1,6 @@
 package com.belhard.lesson4.util;
 
-public class DynamicArray implements MyCollection {
+public class DynamicArray implements MyCollection {//FIXME rewrite
 
     private int count = 0;
     private Object[] first;

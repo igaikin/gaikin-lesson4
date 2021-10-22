@@ -4,8 +4,12 @@ import java.util.Arrays;
 
 public class DynamicArray implements MyCollection {
 
-    private Object[] array = new Object[0];
+    private Object[] array;
     private int size;
+
+    public DynamicArray(int initialSize){
+        array = new Object[initialSize];
+    }
 
     @Override
     public int size() {
@@ -32,7 +36,7 @@ public class DynamicArray implements MyCollection {
                 isDeleted = true;
             }
         }
-        if(isDeleted){
+        if (isDeleted) {
             array[size] = null;
         }
         return isDeleted;
@@ -58,6 +62,6 @@ public class DynamicArray implements MyCollection {
 
     @Override
     public Object[] toArray() {
-        return Arrays.copyOf(array,size);
+        return Arrays.copyOf(array, size);
     }
 }

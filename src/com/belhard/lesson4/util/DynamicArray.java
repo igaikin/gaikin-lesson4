@@ -2,7 +2,7 @@ package com.belhard.lesson4.util;
 
 import java.util.Arrays;
 
-public class DynamicArray implements MyCollection {//FIXME rewrite
+public class DynamicArray implements MyCollection {
 
     private Object[] array = new Object[0];
     private int size;
@@ -61,5 +61,3 @@ public class DynamicArray implements MyCollection {//FIXME rewrite
         return Arrays.copyOf(array,size);
     }
 }
-
-

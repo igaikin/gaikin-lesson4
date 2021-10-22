@@ -4,7 +4,7 @@ public interface MyCollection {
 
     int size();
 
-    boolean add(Object obj);
+    void add(Object obj);
 
     boolean remove(Object obj);
 

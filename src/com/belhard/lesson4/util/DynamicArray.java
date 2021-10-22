@@ -1,86 +1,65 @@
 package com.belhard.lesson4.util;
 
+import java.util.Arrays;
+
 public class DynamicArray implements MyCollection {//FIXME rewrite
 
-    private int count = 0;
-    private Object[] first;
-    private Object[] second;
+    private Object[] array = new Object[0];
+    private int size;
 
-    public DynamicArray() {
-        this.first = new Object[10];
-    }
-
+    @Override
     public int size() {
-        return count;
+        return size;
     }
 
     @Override
-    public boolean add(Object obj) {
-        if (count < first.length) {
-            for (int i = 0; i < first.length; i++) {
-                if (first[i] == null) {
-                    first[i] = obj;
-                    this.count++;
-                    return true;
-                }
-            }
-        } else if (count == first.length) {
-            this.second = new Object[first.length * 2];
-            for (int i = 0; i < first.length; i++) {
-                second[i] = first[i];
-            }
-            this.first = new Object[first.length * 2];
-            for (int i = 0; i < first.length; i++) {
-                first[i] = second[i];
-            }
+    public void add(Object obj) {
+        if (size >= array.length) {
+            array = Arrays.copyOf(array, array.length * 2);
         }
-        for (int i = 0; i < first.length; i++) {
-            if (first[i] == null) {
-                first[i] = obj;
-                count++;
-                return true;
-            }
-        }
-        return false;
+        array[size++] = obj;
     }
 
+    @Override
     public boolean remove(Object obj) {
-        for (int i = 0; i < first.length; i++) {
-            if (first[i] != null && first[i] == obj) {
-                first[i] = null;
-                return true;
+        boolean isDeleted = false;
+        for (int i = 0; i < size; i++) {
+            if (isDeleted) {
+                array[i - 1] = array[i];
+            } else if (array[i].equals(obj)) {
+                array[i] = null;
+                size--;
+                isDeleted = true;
             }
         }
-        return false;
+        if(isDeleted){
+            array[size] = null;
+        }
+        return isDeleted;
     }
 
+    @Override
     public boolean contains(Object obj) {
-        for (int i = 0; i < first.length; i++) {
-            if (first[i] != null && first[i] == obj) {
-                System.out.println("Found::\n" + first[i]);
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(obj)) {
                 return true;
-            } else {
-                System.out.println("Object not found!");
             }
         }
         return false;
     }
 
+    @Override
     public Object get() {
-        Object obj = new Object();
-        for (int i = 0; i < first.length; ) {
-            if (first[0] != null) {
-                obj = first[0];
-
-            }
-
-            first[0] = null;
+        if (size == 0) {
+            return null;
         }
-        return obj;
+        return array[size - 1];
     }
 
+    @Override
     public Object[] toArray() {
-        return first;
+        return Arrays.copyOf(array,size);
     }
-
 }
+
+

@@ -23,13 +23,13 @@ public class AccountantUtil {
                 salaryPosition = salaryPosition.add(BigDecimal.valueOf(200));
                 return salaryPosition;
             } else if (position == (Position.SENIOR_LECTURER)) {
-                salaryPosition = salaryPosition.add(BigDecimal.valueOf(150));
+                salaryPosition = salaryPosition.add(BigDecimal.valueOf(180));
                 return salaryPosition;
             } else if (position == (Position.ASSISTANT)) {
                 salaryPosition = salaryPosition.add(BigDecimal.valueOf(150));
                 return salaryPosition;
             } else if (position == (Position.CLEANER)) {
-                salaryPosition = salaryPosition.add(BigDecimal.valueOf(50));
+                salaryPosition = salaryPosition.add(BigDecimal.valueOf(100));
                 return salaryPosition;
             }
         } else if (position == null) {
@@ -41,7 +41,7 @@ public class AccountantUtil {
 
     public static BigDecimal prizeEmployee(Employee emp) {
         BigDecimal prizeEmployee = emp.getSalary();
-        return prizeEmployee = prizeEmployee.add(BigDecimal.valueOf(100));
+        return prizeEmployee.add(BigDecimal.valueOf(100));
     }
 
     public static BigDecimal allowanceVacation(Employee emp) {

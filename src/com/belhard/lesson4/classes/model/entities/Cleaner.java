@@ -1,11 +1,10 @@
 package com.belhard.lesson4.classes.model.entities;
 
-import com.belhard.lesson4.classes.model.Identifiable;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 
 import java.util.Date;
 
-public class Cleaner extends Employee implements Identifiable {
+public class Cleaner extends Employee {
     private String workingArea;
 
     public Cleaner(String firstName, String lastName, Date dateOfBirth, Address address,

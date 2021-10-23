@@ -10,7 +10,6 @@ public class Student extends Person {
     private int course;
     private Group group;
 
-
     public Student(String firstName, String lastName, Date dateOfBirth, Address address, int course, String faculty,
                    Group group) {
         super(firstName, lastName, dateOfBirth, address);
@@ -19,7 +18,6 @@ public class Student extends Person {
         this.group = group;
         group.removeStudent(this);
         group.addStudent(this);
-
     }
 
     @Override

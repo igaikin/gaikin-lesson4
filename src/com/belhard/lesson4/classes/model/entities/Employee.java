@@ -38,15 +38,12 @@ public abstract class Employee extends Person {
         }
     }
 
-    public Employee(String firstName, String lastName, Date dateOfBirth, Address address,
-                    Subdivision subdivision,
-                    int hoursWorked,
-                    Position position) {
+    public Employee(String firstName, String lastName, Date dateOfBirth, Address address, Subdivision subdivision,
+                    int hoursWorked, Position position) {
         super(firstName, lastName, dateOfBirth, address);
         this.position = position;
         this.hoursWorked = hoursWorked;
         this.subdivision = subdivision;
-
     }
 
     @Override

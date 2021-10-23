@@ -9,6 +9,11 @@ public class Address {
     private String block;
     private int flat;
 
+    public Address(Country country, String city, String street) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+    }
     public Address(Country country, String city, String street, int house) {
         this.country = country;
         this.city = city;
@@ -30,6 +35,7 @@ public class Address {
         this(country, city, street, house, block);
         this.flat = flat;
     }
+
 
     public Country getCountry() {
         return country;
@@ -81,12 +87,16 @@ public class Address {
 
     public enum Country {
         BLR("Republic of Belarus"),
-        POL("Poland"),
-        LTU("Lithuania"),
-        LVA("Latvia"),
         DEU("Germany"),
+        IRQ("Iraq"),
+        ISR("Israel"),
+        LBY("Libya"),
+        PAK("Pakistan"),
         RUS("Russian Federation"),
-        UKR("Ukraine");
+        SYR("Syrian Arab Republic"),
+        UGA("Uganda"),
+        UKR("Ukraine"),
+        USSR("Union of Soviet Socialist Republics");
 
         private final String name;
 

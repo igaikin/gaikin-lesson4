@@ -1,13 +1,11 @@
 package com.belhard.lesson4.classes.model.entities;
 
-import com.belhard.lesson4.classes.model.Identifiable;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
-import com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country;
 import com.belhard.lesson4.classes.model.groups.Group;
 
 import java.util.Date;
 
-public class Student extends Person implements Identifiable {
+public class Student extends Person {
     private String faculty;
     private int course;
     private Group group;

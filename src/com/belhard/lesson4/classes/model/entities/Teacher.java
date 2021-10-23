@@ -1,13 +1,13 @@
 package com.belhard.lesson4.classes.model.entities;
 
-import com.belhard.lesson4.classes.model.Identifiable;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
+import com.belhard.lesson4.classes.model.groups.Chair;
 import com.belhard.lesson4.classes.model.groups.Group;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Teacher extends Employee implements Identifiable {
+public class Teacher extends Employee {
 
     private String department;
     private Group group;
@@ -31,7 +31,6 @@ public class Teacher extends Employee implements Identifiable {
         public String getName() {
             return name;
         }
-
     }
 
     public Teacher(String firstName, String lastName, Date dateOfBirth, Address address, Subdivision subdivision,

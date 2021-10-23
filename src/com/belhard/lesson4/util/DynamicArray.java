@@ -7,7 +7,7 @@ public class DynamicArray implements MyCollection {
     private Object[] array;
     private int size;
 
-    public DynamicArray(int initialSize){
+    public DynamicArray(int initialSize) {
         array = new Object[initialSize];
     }
 

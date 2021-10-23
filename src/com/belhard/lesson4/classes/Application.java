@@ -12,7 +12,7 @@ import com.belhard.lesson4.classes.service.util.AccountantUtil;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import static com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country.BLR;
+import static com.belhard.lesson4.classes.model.entities.auxiliary.Address.Country.*;
 
 public class Application {
 

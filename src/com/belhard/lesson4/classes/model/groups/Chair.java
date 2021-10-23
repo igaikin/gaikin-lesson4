@@ -75,5 +75,3 @@ public class Chair {
         allSalary = allSalaries.add(cleaner.getSalary());
         return allSalary;
     }
-
-}

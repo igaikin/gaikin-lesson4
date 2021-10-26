@@ -16,12 +16,13 @@ public class Cleaner extends Employee {
     }
 
     public String toString() {
-        return String.format("Cleaner:%nName: %s %s%nDate of Birth: %s%nSubdivision: %s%n" +
-                        "Position: %s%nHours Worked: %d%nWorking Area: %s%nSalary:%.2f%nID: %d%n%s%nI am an " +
-                        "employee of the support staff in the position of %s %nI love this job because of the " +
-                        "adequate schedule and good pay.", getFirstName(), getLastName(), getDateOfBirth(),
-                subdivision, position, getHoursWorked(), getWorkingArea(), getSalary(), getId(),
-                introduceYourself(), position);
+        return String.format("\tCLEANER:%nName          |%s %s%nDate of Birth |%s%nAddress       |%s%n"
+                        + "Subdivision   |%s%nPosition      |%s%nHours Worked  |%d%nService zone  |%s%n"
+                        + "ID:           |%d%nSalary        |%.2f%n%s%n"
+                        + "I am an employee of the support staff in the position of %s.%n"
+                        + "I love this job because of the adequate schedule and good pay.",
+                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), subdivision.getName(), position.getName(),
+                getHoursWorked(), getChair().getName(), getId(), getSalary(), introduceYourself(), position.getName());
     }
 
     public Chair getChair() {

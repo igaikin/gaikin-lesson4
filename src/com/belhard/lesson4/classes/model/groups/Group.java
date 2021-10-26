@@ -27,7 +27,8 @@ public class Group {
         int util = 1;
         for (int i = 0; i < students.toArray().length; i++) {
             if (students.toArray()[i] != null) {
-                sb.append("\t").append(util).append(":  ").append(students.toArray()[i].toString()).append(NEW_LINE);
+                sb.append("\t").append(util).append(":  ").append(students.toArray()[i].toString()).append(NEW_LINE)
+                        .append(NEW_LINE);
                 util++;
             }
         }

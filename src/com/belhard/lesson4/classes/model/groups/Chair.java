@@ -28,7 +28,8 @@ public class Chair {
         int util = 1;
         for (int i = 0; i < teachers.toArray().length; i++) {
             if (teachers.toArray()[i] != null) {
-                sb.append("\t").append(util).append(":  ").append(teachers.toArray()[i].toString()).append("\n");
+                sb.append("\t").append(util).append(":  ").append(teachers.toArray()[i].toString()).append(NEW_LINE)
+                        .append(NEW_LINE);
                 util++;
             }
         }

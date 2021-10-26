@@ -9,10 +9,12 @@ public class Group {
     private String name;
     private Teacher teacher;
     private final MyCollection students;
+    private static final int MAX_NUMBER_OF_STUDENTS = 8;
+    public static final String NEW_LINE = System.lineSeparator();
 
     public Group(String name) {
         this.name = name;
-        students = new DynamicArray();
+        students = new DynamicArray(MAX_NUMBER_OF_STUDENTS);
     }
 
     @Override
@@ -31,12 +33,17 @@ public class Group {
         return sb.toString();
     }
 
-    public void addStudent(Student student) {//FIXME boolean , capacity
-        students.add(student);
+    public boolean addStudent(Student student) {
+        if (students.size() >= MAX_NUMBER_OF_STUDENTS) {
+            return false;
+        } else {
+            students.add(student);
+            return true;
+        }
     }
 
-    public void removeStudent(Student student) { //FIXME boolean
-        students.remove(student);
+    public boolean removeStudent(Student student) {
+        return students.remove(student);
     }
 
     public String getName() {

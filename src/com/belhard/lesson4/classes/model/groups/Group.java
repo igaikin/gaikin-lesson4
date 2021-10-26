@@ -63,11 +63,7 @@ public class Group {
         this.teacher = teacher;
     }
 
-    public boolean removeTeacher(long id) {
-        if (teacher != null && teacher.getId() == id) {
-            teacher = null;
-        }
-        return false;
+    public void removeTeacher() {
+        teacher = null;
     }
-
 }

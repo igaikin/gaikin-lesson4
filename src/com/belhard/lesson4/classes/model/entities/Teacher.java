@@ -11,6 +11,7 @@ public class Teacher extends Employee {
 
     private String department;
     private Group group;
+    private Chair chair;
     private BigDecimal salaryTeacher = BigDecimal.ZERO;
     public AcademicDegree academicDegree;
 
@@ -39,7 +40,10 @@ public class Teacher extends Employee {
         this.department = department;
         this.academicDegree = academicDegree;
         this.group = group;
+        this.chair = chair;
         group.setTeacher(this);
+        chair.removeTeacher(this);
+        chair.addTeacher(this);
     }
 
     public String toString() {
@@ -64,15 +68,6 @@ public class Teacher extends Employee {
         this.salaryTeacher = salaryTeacher;
     }
 
-    public String getDepartment() {
-        return department;
-
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     public Group getGroup() {
         return group;
     }
@@ -81,13 +76,11 @@ public class Teacher extends Employee {
         this.group = group;
     }
 
-    //	@Override
-//	public int hashCode() {
-//		long result = curatorOfTheGroup;
-//		result = 31 * result + Teacher.getAge();
-//		result = 31 * result + (department == null ? 0 : department.hashCode());
-//		result = 31 * result + (academicDegree == null ? 0 : academicDegree.hashCode());
-//		return (int) result;
-//	}
+    public Chair getChair() {
+        return chair;
+    }
 
+    public void setChair(Chair chair) {
+        this.chair = chair;
+    }
 }

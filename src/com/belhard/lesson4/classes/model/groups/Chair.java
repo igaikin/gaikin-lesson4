@@ -12,11 +12,13 @@ public class Chair {
     private String name;
     private Cleaner cleaner;
     private final MyCollection teachers;
+    private static final int MAX_NUMBER_OF_TEACHERS = 10;
+    public static final String NEW_LINE = System.lineSeparator();
 
     public Chair(String name) {
 
         this.name = name;
-        teachers = new DynamicArray();
+        teachers = new DynamicArray(MAX_NUMBER_OF_TEACHERS);
     }
 
     public String toString() {
@@ -40,8 +42,17 @@ public class Chair {
         return str;
     }
 
-    public void addTeachers(Teacher teacher) {
-        teachers.add(teacher);
+    public boolean addTeacher(Teacher teacher) {
+        if (teachers.size() >= MAX_NUMBER_OF_TEACHERS) {
+            return false;
+        } else {
+            teachers.add(teacher);
+            return true;
+        }
+    }
+
+    public boolean removeTeacher(Teacher teacher) {
+        return teachers.remove(teacher);
     }
 
     public String getName() {

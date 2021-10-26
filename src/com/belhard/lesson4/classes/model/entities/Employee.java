@@ -27,6 +27,7 @@ public abstract class Employee extends Person {
 
     public enum Subdivision {
         WORK_STAFF("Worker"), TEACHERS_STAFF("Teacher");
+
         private final String name;
 
         Subdivision(String name) {
@@ -48,8 +49,8 @@ public abstract class Employee extends Person {
 
     @Override
     public String introduceYourself() {
-        return String.format("%nHi! My name is %s %s. I`m %s this University. I''m %s years old.", getFirstName(),
-                getLastName(), position, getDateOfBirth());
+        return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
+                getLastName(), position.getName(), getDateOfBirth());
     }
 
     public BigDecimal getSalary() {

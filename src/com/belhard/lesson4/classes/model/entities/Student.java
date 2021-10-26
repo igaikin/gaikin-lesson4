@@ -22,20 +22,18 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return String.format("Student:%nName:          | %s%nDate of birth: | %s%nAddress:       |%s%nCourse:        | "
-                        + "%d%nFaculty:      "
-                        + " | %s%nGroup:         | %s%nID:            | %d%n%s%n- - - - - - - - - - - - - - - - - - - "
-                        + "- - - - - - - - - - ",
-                getFirstName() + " " + getLastName(), getDateOfBirth(), getAddress(),
-                getCourse(), getFaculty(), getGroup().getName(), getId(), introduceYourself());
+        return String.format("Student:%nName          | %s %s%nDate of birth | %s%nAddress       | %s%n"
+                        + "Course        | %d%nFaculty       | %s%nGroup         | %s%nID            | %d%n%"
+                        + "s%n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - ",
+                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), getCourse(), getFaculty(),
+                getGroup().getName(), getId(), introduceYourself());
     }
 
     @Override
     public String introduceYourself() {
-        return String.format("%nHi! My name is %s %s.%nI am a university student, I am %s " +
-                        "years student of the %s faculty %sth groups.", getFirstName(), getLastName(), getCourse(),
-                getFaculty(),
-                group.getName());
+        return String.format("%nHi! My name is %s %s.%nI am a student of the university.%nI am %s course student of "
+                        + "the %s faculty %sth groups.",
+                getFirstName(), getLastName(), getCourse(), getFaculty(), group.getName());
     }
 
     public String getFaculty() {

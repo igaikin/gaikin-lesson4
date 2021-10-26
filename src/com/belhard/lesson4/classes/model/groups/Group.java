@@ -19,14 +19,15 @@ public class Group {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("\t******* G R O U P *******\n\t-----------" + getName() + "------------\n\n");
+        StringBuilder sb = new StringBuilder("* * * * * * * G R O U P * * * * * * *" + NEW_LINE)
+                .append("\t\t---------").append(getName()).append("----------").append(NEW_LINE).append(NEW_LINE);
         if (teacher != null) {
-            sb.append(teacher).append("\n");
+            sb.append(teacher).append(NEW_LINE);
         }
         int util = 1;
         for (int i = 0; i < students.toArray().length; i++) {
             if (students.toArray()[i] != null) {
-                sb.append("\t").append(util).append(":  ").append(students.toArray()[i].toString()).append("\n");
+                sb.append("\t").append(util).append(":  ").append(students.toArray()[i].toString()).append(NEW_LINE);
                 util++;
             }
         }

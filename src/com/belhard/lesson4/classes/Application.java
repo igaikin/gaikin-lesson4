@@ -16,66 +16,74 @@ import static com.belhard.lesson4.classes.model.entities.auxiliary.Address.Count
 
 public class Application {
 
-
     public static void main(String[] args) {
-        //FIXME add Address {String city, street, int house, String block, int flat ...}
         Group group = new Group("13");
         Chair chair = new Chair("ESTABLISHING A REGIME");
 
-        //FIXME HOTFIX
-        Address address = new Address(BLR, "Minsk", "Nezalezhnosti", 17);
-
-        Teacher teacher0 = new Teacher("Irod", "Great", new Date(), address,
-                Employee.Subdivision.TEACHERS_STAFF,
-                Teacher.AcademicDegree.DOCTOR,
-                Employee.Position.HEAD_OF_DEPARTMENT, 75, "Establishing a regime", group);
-        Student students1 = new Student("Muamar", "Kadaffi", new Date(), address, 1, "Tyranny", group);
-        Student students2 = new Student("Usama", "benLaden", new Date(), address, 1, "Tyranny", group);
-        Student students3 = new Student("Adolf", "Hitler", new Date(), address, 1, "Tyranny", group);
-        Student students4 = new Student("Sadam", "Husein", new Date(), address, 1, "Tyranny", group);
-        Student students5 = new Student("Bashar", "Assad", new Date(), address, 1, "Tyranny", group);
-        Student students6 = new Student("Iddi", "Amin", new Date(), address, 1, "Tyranny", group);
-        Student students7 = new Student("Josef", "Stalin", new Date(), address, 1, "Tyranny", group);
-        Student students8 = new Student("Alesandro", "Shoushenk", new Date(), address, 1, "Tyranny", group);
-
-        Teacher teacher1 = new Teacher("Vladimir", "Lenin", new Date(), address,
-                Employee.Subdivision.TEACHERS_STAFF,
-                Teacher.AcademicDegree.DOCTOR, Employee.Position.DEPUTY, 150, "EAR", new Group("01"));
-        Teacher teacher2 = new Teacher("Nikita", "Chruschev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
-                Teacher.AcademicDegree.DOCTOR, Employee.Position.DEPUTY, 160, "EAR", new Group("02"));
-        Teacher teacher3 = new Teacher("Konstantin", "Chernenko", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
-                Teacher.AcademicDegree.CANDIDATE, Employee.Position.TEACHER, 32, "EAR", new Group("03"));
-        Teacher teacher4 = new Teacher("Georgiy", "Malenkov", new Date(), address, Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.PROFESSOR,
-                Employee.Position.TEACHER, 140, "EAR", new Group("04"));
-        Teacher teacher5 = new Teacher("Uriy", "Andropov", new Date(), address, Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
-                Employee.Position.TEACHER, 160, "EAR", new Group("05"));
-        Teacher teacher6 = new Teacher("Leonid", "Brezhnev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
-                Employee.Position.TEACHER, 150, "EAR", new Group("06"));
-        Teacher teacher7 = new Teacher("Michail", "Gorbachev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
-                Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Position.SENIOR_LECTURER, 140, "EAR", new Group("07"));
-        Teacher teacher8 = new Teacher("Vladimir", "Putin", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
-                Teacher.AcademicDegree.ASSISTANT_PROFESSOR, Employee.Position.SENIOR_LECTURER, 160, "EAR", new Group("08"));
-        Teacher teacher9 = new Teacher("Dmitriy", "Medvedev", new Date(), address, Employee.Subdivision.TEACHERS_STAFF,
-                Teacher.AcademicDegree.BACHELOR_OF_BUSINESS_ADMINISTRATION, Employee.Position.ASSISTANT, 140, "EAR",
-                new Group("09"));
-        Cleaner cleaner = new Cleaner("Petr", "Poroshenko", new Date(), address, Employee.Subdivision.WORK_STAFF,
-                Employee.Position.CLEANER, 160,
-                "All rooms of Department Establishing a regime");
-
-        chair.setCleaner(cleaner);
-        chair.addTeachers(teacher0);
-        chair.addTeachers(teacher1);
-        chair.addTeachers(teacher2);
-        chair.addTeachers(teacher3);
-        chair.addTeachers(teacher4);
-        chair.addTeachers(teacher5);
-        chair.addTeachers(teacher6);
-        chair.addTeachers(teacher7);
-        chair.addTeachers(teacher8);
-        chair.addTeachers(teacher9);
+        Student students0 = new Student("Muammar", "Gaddafi", new Date(),
+                new Address(LBY, "Tripoli", "Tarik al Seka", 58), 1, "Tyranny", group);
+        Student students1 = new Student("Osama", "bin Ladenen", new Date(),
+                new Address(PAK, "Abbottabad", "Kehal", 46), 1, "Tyranny", group);
+        Student students2 = new Student("Adolf", "Hitler", new Date(),
+                new Address(DEU, "Berlin", "Ebertstraße", 15), 1, "Tyranny", group);
+        Student students3 = new Student("Saddam", "Hussein", new Date(),
+                new Address(IRQ, "Baghdad", "building without address "), 1, "Tyranny", group);
+        Student students4 = new Student("Bashar", "al-Assad", new Date(),
+                new Address(SYR, "Damascus", "Kafr Sousa - in front of Al-Assad Hospital"), 1, "Tyranny", group);
+        Student students5 = new Student("Idi", "Amin", new Date(),
+                new Address(UGA, "Kampala", "Apollo Kaggwa Rd", 9, "11"), 1, "Tyranny", group);
+        Student students6 = new Student("Joseph", "Stalin", new Date(),
+                new Address(USSR, "Moscow", "Kolmogorova", 1),
+                1, "Tyranny", group);
+        Student students7 = new Student("Alesandro", "Shoushenko", new Date(),
+                new Address(BLR, "Minsk", "Pobediteley", 15), 1, "Tyranny", group);
+        Teacher teacher0 = new Teacher("Irod", "Great", new Date(),
+                new Address(ISR, "Herodion", "Great Palace"),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.DOCTOR,
+                Employee.Position.HEAD_OF_DEPARTMENT, 75, chair, group);
+        Teacher teacher1 = new Teacher("Vladimir", "Lenin", new Date(),
+                new Address(USSR, "Moscow", "Red square"),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.DOCTOR,
+                Employee.Position.DEPUTY, 150, chair, new Group("01"));
+        Teacher teacher2 = new Teacher("Nikita", "Chruschev", new Date(),
+                new Address(USSR, "Moscow", "Sadovo-spasskaya", 21),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.DOCTOR,
+                Employee.Position.DEPUTY, 160, chair, new Group("2"));
+        Teacher teacher3 = new Teacher("Konstantin", "Chernenko", new Date(),
+                new Address(USSR, "Moscow", "Kotel'nicheskaya embankment", 1),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.CANDIDATE,
+                Employee.Position.TEACHER, 32, chair, new Group("3"));
+        Teacher teacher4 = new Teacher("Georgiy", "Malenkov", new Date(),
+                new Address(USSR, "Moscow", "Arbat", 57),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.PROFESSOR,
+                Employee.Position.TEACHER, 140, chair, new Group("4"));
+        Teacher teacher5 = new Teacher("Uriy", "Andropov", new Date(),
+                new Address(USSR, "Moscow", "Kudrinskaya square", 1),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
+                Employee.Position.TEACHER, 160, chair, new Group("5"));
+        Teacher teacher6 = new Teacher("Leonid", "Brezhnev", new Date(),
+                new Address(USSR, "Moscow", "Kalanchevskaya", 21, "40"),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.MASTER,
+                Employee.Position.TEACHER, 150, chair, new Group("6"));
+        Teacher teacher7 = new Teacher("Michail", "Gorbachev", new Date(),
+                new Address(USSR, "Moscow", " Kutuzovskiy Avenue", 21, "1"),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.ASSISTANT_PROFESSOR,
+                Employee.Position.SENIOR_LECTURER, 140, chair, new Group("7"));
+        Teacher teacher8 = new Teacher("Vladimir", "Putin", new Date(),
+                new Address(RUS, "Moscow", "Kremlin"),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.ASSISTANT_PROFESSOR,
+                Employee.Position.SENIOR_LECTURER, 160, chair, new Group("8"));
+        Teacher teacher9 = new Teacher("Dmitriy", "Medvedev", new Date(),
+                new Address(RUS, "Moscow", "Krasnopresnenskaya embankment", 2),
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.BACHELOR_OF_BUSINESS_ADMINISTRATION,
+                Employee.Position.ASSISTANT, 140, chair, new Group("9"));
+        Cleaner cleaner = new Cleaner("Petr", "Poroshenko", new Date(),
+                new Address(UKR, "Kiev", "Bankovaya", 11),
+                Employee.Subdivision.WORK_STAFF, Employee.Position.CLEANER, 160, chair);
 
         System.out.println(group);
         System.out.println();
+        System.out.println(chair);
 
         teacher0.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher0)
                 .add(AccountantUtil.increaseAcademicSalary(teacher0).add(AccountantUtil.prizeEmployee(teacher0)))));
@@ -99,8 +107,5 @@ public class Application {
                 .add(AccountantUtil.increaseAcademicSalary(teacher9).add(AccountantUtil.prizeEmployee(teacher9)))));
 
         cleaner.setSalary(BigDecimal.valueOf(350).add(AccountantUtil.prizeEmployee(cleaner)));
-
-        System.out.println(chair);
-
     }
 }

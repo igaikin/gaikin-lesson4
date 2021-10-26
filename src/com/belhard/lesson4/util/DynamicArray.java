@@ -8,6 +8,9 @@ public class DynamicArray implements MyCollection {
     private int size;
 
     public DynamicArray(int initialSize) {
+        if (initialSize < 1) {
+            throw new IllegalArgumentException("WARNING!!!");
+        }
         array = new Object[initialSize];
     }
 

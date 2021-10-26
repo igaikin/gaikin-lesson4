@@ -5,8 +5,6 @@ import com.belhard.lesson4.classes.model.entities.Teacher;
 import com.belhard.lesson4.util.DynamicArray;
 import com.belhard.lesson4.util.MyCollection;
 
-import java.math.BigDecimal;
-
 public class Chair {
 
     private String name;
@@ -16,30 +14,25 @@ public class Chair {
     public static final String NEW_LINE = System.lineSeparator();
 
     public Chair(String name) {
-
         this.name = name;
         teachers = new DynamicArray(MAX_NUMBER_OF_TEACHERS);
     }
 
+    @Override
     public String toString() {
-        String str = "\t*******Chair:********\n\t" + name + "\n\n";
+        StringBuilder sb = new StringBuilder("* * * * * * * C H A I R * * * * * * * *").append(NEW_LINE)
+                .append("\t\t").append(name).append(NEW_LINE).append(NEW_LINE);
         if (cleaner != null) {
-            str = str + cleaner + "\n\n";
+            sb.append(cleaner).append(NEW_LINE).append(NEW_LINE);
         }
         int util = 1;
-
         for (int i = 0; i < teachers.toArray().length; i++) {
             if (teachers.toArray()[i] != null) {
-                str = str + "\t" + util + ":  " + teachers.toArray()[i].toString() + "\n\n";//FIXME System.lineSeparator();
-                util++;
-
-            } else if (teachers.toArray()[i] == null) {
-                str = str + "\t" + util + ":  " + "THE EMPLOYEE IS NOT ASSIGNED\n" + "\n";
+                sb.append("\t").append(util).append(":  ").append(teachers.toArray()[i].toString()).append("\n");
                 util++;
             }
-
         }
-        return str;
+        return sb.toString();
     }
 
     public boolean addTeacher(Teacher teacher) {
@@ -74,15 +67,4 @@ public class Chair {
     public void removeCleaner() {
         cleaner = null;
     }
-
-    public static BigDecimal allSalaryChair(Teacher[] teacher) {
-        BigDecimal allSalaries = BigDecimal.ZERO;
-        BigDecimal allSalary = BigDecimal.ZERO;
-        for (int i = 0; i < teacher.length; i++) {
-            if (teacher[i] != null) {
-                allSalaries = allSalaries.add(teacher[i].getSalary());
-            }
-        }
-        allSalary = allSalaries.add(cleaner.getSalary());
-        return allSalary;
-    }
+}

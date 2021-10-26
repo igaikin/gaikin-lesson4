@@ -8,7 +8,7 @@ import java.util.Date;
 public abstract class Employee extends Person {
     public Subdivision subdivision;
     private int hoursWorked;
-    private BigDecimal salary = BigDecimal.valueOf(0); //FIXME introduce new class Salary { BDecimal amount, Currency currency }
+    private BigDecimal salary = BigDecimal.valueOf(0);
     public Position position;
 
     public enum Position {

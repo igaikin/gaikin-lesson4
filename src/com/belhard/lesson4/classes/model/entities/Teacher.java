@@ -9,7 +9,6 @@ import java.util.Date;
 
 public class Teacher extends Employee {
 
-    private String department;
     private Group group;
     private Chair chair;
     private BigDecimal salaryTeacher = BigDecimal.ZERO;
@@ -35,9 +34,8 @@ public class Teacher extends Employee {
     }
 
     public Teacher(String firstName, String lastName, Date dateOfBirth, Address address, Subdivision subdivision,
-                   AcademicDegree academicDegree, Position position, int hoursWorked, String department, Group group) {
+                   AcademicDegree academicDegree, Position position, int hoursWorked, Chair chair, Group group) {
         super(firstName, lastName, dateOfBirth, address, subdivision, hoursWorked, position);
-        this.department = department;
         this.academicDegree = academicDegree;
         this.group = group;
         this.chair = chair;

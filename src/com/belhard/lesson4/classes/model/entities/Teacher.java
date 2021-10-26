@@ -47,17 +47,19 @@ public class Teacher extends Employee {
     }
 
     public String toString() {
-        return String.format("TEACHER:%nName: %20s %s%nDate of Birth: %32s%nSubdivision: %19s%nPost: " +
-                        "%22s%nDepartment: %10s%nAcademic Degree: %37s%nID: %34d%nCurator Group: %8s%nHours Worked: " +
-                        "%20d%nSalary: %20.2f%n___________________________________", getFirstName(), getLastName(),
-                getDateOfBirth(), subdivision, position, getDepartment(), academicDegree, getId(),
-                getGroup().getName(), getHoursWorked(), getSalary());
+        return String.format("TEACHER:%nName            |%s %s%nDate of Birth   |%s%nAddress         |%s%n"
+                        + "Subdivision     |%s%nPosition        |%s%nChair           |%s%n"
+                        + "Academic Degree |%s%nID              |%d%nCurator Group   |%s%nHours Worked    |%d%n"
+                        + "Salary          |%1.2f%n%s%n__________________________________________________",
+                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), subdivision.getName(),
+                position.getName(), getChair().getName(), academicDegree.name, getId(), getGroup().getName(),
+                getHoursWorked(), getSalary(), introduceYourself());
     }
 
     @Override
     public String introduceYourself() {
-        return String.format("%nHi! My name is %s %s. I`m %s this University. I'm %s birth.", getFirstName(),
-                getLastName(), position, getDateOfBirth());
+        return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
+                getLastName(), position.getName(), getDateOfBirth());
     }
 
     public BigDecimal getSalaryTeacher() {

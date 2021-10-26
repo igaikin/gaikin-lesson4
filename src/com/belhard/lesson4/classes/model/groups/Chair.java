@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class Chair {
 
     private String name;
-    private static Cleaner cleaner;
+    private Cleaner cleaner;
     private final MyCollection teachers;
 
     public Chair(String name) {
@@ -57,10 +57,10 @@ public class Chair {
     }
 
     public void setCleaner(Cleaner cleaner) {
-        Chair.cleaner = cleaner;
+        this.cleaner = cleaner;
     }
 
-    public void delCleaner() {
+    public void removeCleaner() {
         cleaner = null;
     }
 

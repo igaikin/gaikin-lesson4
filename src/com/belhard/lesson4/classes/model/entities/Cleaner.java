@@ -1,17 +1,18 @@
 package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
+import com.belhard.lesson4.classes.model.groups.Chair;
 
 import java.util.Date;
 
 public class Cleaner extends Employee {
-    private String workingArea;
+    private Chair chair;
 
     public Cleaner(String firstName, String lastName, Date dateOfBirth, Address address,
-                   Subdivision subdivision, Position position, int hoursWorked, String workingArea) {
+                   Subdivision subdivision, Position position, int hoursWorked, Chair chair) {
         super(firstName, lastName, dateOfBirth, address, subdivision, hoursWorked, position);
-        this.workingArea = workingArea;
-
+        this.chair = chair;
+        chair.setCleaner(this);
     }
 
     public String toString() {
@@ -23,12 +24,11 @@ public class Cleaner extends Employee {
                 introduceYourself(), position);
     }
 
-    public String getWorkingArea() {
-        return workingArea;
+    public Chair getChair() {
+        return chair;
     }
 
-    public void setWorkingArea(String workingArea) {
-        this.workingArea = workingArea;
+    public void setChair(Chair chair) {
+        this.chair = chair;
     }
-
 }

@@ -1,15 +1,16 @@
 package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
+import com.belhard.lesson4.classes.model.entities.auxiliary.Money;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 public abstract class Employee extends Person {
-    public Subdivision subdivision;
+    private Subdivision subdivision;
     private int hoursWorked;
-    private BigDecimal salary = BigDecimal.valueOf(0);
-    public Position position;
+    private Money salary = new Money(BigDecimal.ZERO, Money.Currency.USD);
+    private Position position;
 
     public enum Position {
         HEAD_OF_DEPARTMENT("Head of department"), DEPUTY("Deputy"), TEACHER("Teacher"),
@@ -47,17 +48,33 @@ public abstract class Employee extends Person {
         this.subdivision = subdivision;
     }
 
+    public Subdivision getSubdivision() {
+        return subdivision;
+    }
+
+    public void setSubdivision(Subdivision subdivision) {
+        this.subdivision = subdivision;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
     @Override
     public String introduceYourself() {
         return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
                 getLastName(), position.getName(), getDateOfBirth());
     }
 
-    public BigDecimal getSalary() {
+    public Money getSalary() {
         return salary;
     }
 
-    public void setSalary(BigDecimal salary) {
+    public void setSalary(Money salary) {
         this.salary = salary;
     }
 

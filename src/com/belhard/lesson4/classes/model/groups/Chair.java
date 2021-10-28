@@ -18,6 +18,10 @@ public class Chair {
         teachers = new DynamicArray(MAX_NUMBER_OF_TEACHERS);
     }
 
+    public Object[] getTeachers() {
+        return teachers.toArray();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("* * * * * * * C H A I R * * * * * * * *").append(NEW_LINE)

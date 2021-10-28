@@ -4,15 +4,12 @@ import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.groups.Chair;
 import com.belhard.lesson4.classes.model.groups.Group;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class Teacher extends Employee {
-
     private Group group;
     private Chair chair;
-    private BigDecimal salaryTeacher = BigDecimal.ZERO;
-    public AcademicDegree academicDegree;
+    private AcademicDegree academicDegree;
 
     public enum AcademicDegree {
         DOCTOR("Doctor"),
@@ -48,24 +45,24 @@ public class Teacher extends Employee {
         return String.format("TEACHER:%nName            | %s %s%nDate of Birth   | %s%nAddress         | %s%n"
                         + "Subdivision     | %s%nPosition        | %s%nChair           | %s%n"
                         + "Academic Degree | %s%nID              | %d%nCurator Group   | %s%nHours Worked    | %d%n"
-                        + "Salary          | %1.2f%n%s%n__________________________________________________",
-                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), subdivision.getName(),
-                position.getName(), getChair().getName(), academicDegree.name, getId(), getGroup().getName(),
-                getHoursWorked(), getSalary(), introduceYourself());
+                        + "Salary          | %s%1.2f%n%s%n__________________________________________________",
+                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), getSubdivision().getName(),
+                getPosition().getName(), getChair().getName(), academicDegree.name, getId(), getGroup().getName(),
+                getHoursWorked(), getSalary().getCurrency().getSymbol(), getSalary().getAmount(), introduceYourself());
     }
 
     @Override
     public String introduceYourself() {
         return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
-                getLastName(), position.getName(), getDateOfBirth());
+                getLastName(), getPosition().getName(), getDateOfBirth());
     }
 
-    public BigDecimal getSalaryTeacher() {
-        return salaryTeacher;
+    public AcademicDegree getAcademicDegree() {
+        return academicDegree;
     }
 
-    public void setSalaryTeacher(BigDecimal salaryTeacher) {
-        this.salaryTeacher = salaryTeacher;
+    public void setAcademicDegree(AcademicDegree academicDegree) {
+        this.academicDegree = academicDegree;
     }
 
     public Group getGroup() {

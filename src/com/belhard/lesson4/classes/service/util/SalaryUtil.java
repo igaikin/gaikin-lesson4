@@ -7,7 +7,7 @@ import com.belhard.lesson4.classes.model.entities.Teacher.AcademicDegree;
 
 import java.math.BigDecimal;
 
-public class AccountantUtil {
+public class SalaryUtil {
 
     public static BigDecimal allowancePosition(Employee emp) {
         Position position = emp.position;

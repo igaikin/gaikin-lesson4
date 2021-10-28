@@ -7,7 +7,7 @@ import com.belhard.lesson4.classes.model.entities.Teacher;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.groups.Chair;
 import com.belhard.lesson4.classes.model.groups.Group;
-import com.belhard.lesson4.classes.service.util.AccountantUtil;
+import com.belhard.lesson4.classes.service.util.SalaryUtil;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -85,27 +85,26 @@ public class Application {
         System.out.println();
         System.out.println(chair);
 
-        teacher0.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher0)
-                .add(AccountantUtil.increaseAcademicSalary(teacher0).add(AccountantUtil.prizeEmployee(teacher0)))));
-        teacher1.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher1)
-                .add(AccountantUtil.increaseAcademicSalary(teacher1).add(AccountantUtil.prizeEmployee(teacher1)))));
-        teacher2.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher2)
-                .add(AccountantUtil.increaseAcademicSalary(teacher2).add(AccountantUtil.prizeEmployee(teacher2)))));
-        teacher3.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher3)
-                .add(AccountantUtil.increaseAcademicSalary(teacher3).add(AccountantUtil.prizeEmployee(teacher3)))));
-        teacher4.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher4)
-                .add(AccountantUtil.increaseAcademicSalary(teacher4).add(AccountantUtil.prizeEmployee(teacher4)))));
-        teacher5.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher5)
-                .add(AccountantUtil.increaseAcademicSalary(teacher5).add(AccountantUtil.prizeEmployee(teacher5)))));
-        teacher6.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher6)
-                .add(AccountantUtil.increaseAcademicSalary(teacher6).add(AccountantUtil.prizeEmployee(teacher6)))));
-        teacher7.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher7)
-                .add(AccountantUtil.increaseAcademicSalary(teacher7).add(AccountantUtil.prizeEmployee(teacher7)))));
-        teacher8.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher8)
-                .add(AccountantUtil.increaseAcademicSalary(teacher8).add(AccountantUtil.prizeEmployee(teacher8)))));
-        teacher9.setSalary(BigDecimal.valueOf(500).add(AccountantUtil.allowancePosition(teacher9)
-                .add(AccountantUtil.increaseAcademicSalary(teacher9).add(AccountantUtil.prizeEmployee(teacher9)))));
-
-        cleaner.setSalary(BigDecimal.valueOf(350).add(AccountantUtil.prizeEmployee(cleaner)));
+        teacher0.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher0)
+                .add(SalaryUtil.increaseAcademicSalary(teacher0).add(SalaryUtil.prizeEmployee(teacher0)))));
+        teacher1.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher1)
+                .add(SalaryUtil.increaseAcademicSalary(teacher1).add(SalaryUtil.prizeEmployee(teacher1)))));
+        teacher2.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher2)
+                .add(SalaryUtil.increaseAcademicSalary(teacher2).add(SalaryUtil.prizeEmployee(teacher2)))));
+        teacher3.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher3)
+                .add(SalaryUtil.increaseAcademicSalary(teacher3).add(SalaryUtil.prizeEmployee(teacher3)))));
+        teacher4.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher4)
+                .add(SalaryUtil.increaseAcademicSalary(teacher4).add(SalaryUtil.prizeEmployee(teacher4)))));
+        teacher5.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher5)
+                .add(SalaryUtil.increaseAcademicSalary(teacher5).add(SalaryUtil.prizeEmployee(teacher5)))));
+        teacher6.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher6)
+                .add(SalaryUtil.increaseAcademicSalary(teacher6).add(SalaryUtil.prizeEmployee(teacher6)))));
+        teacher7.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher7)
+                .add(SalaryUtil.increaseAcademicSalary(teacher7).add(SalaryUtil.prizeEmployee(teacher7)))));
+        teacher8.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher8)
+                .add(SalaryUtil.increaseAcademicSalary(teacher8).add(SalaryUtil.prizeEmployee(teacher8)))));
+        teacher9.setSalary(BigDecimal.valueOf(500).add(SalaryUtil.allowancePosition(teacher9)
+                .add(SalaryUtil.increaseAcademicSalary(teacher9).add(SalaryUtil.prizeEmployee(teacher9)))));
+        cleaner.setSalary(BigDecimal.valueOf(350).add(SalaryUtil.prizeEmployee(cleaner)));
     }
 }

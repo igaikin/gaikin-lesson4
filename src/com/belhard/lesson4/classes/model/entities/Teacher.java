@@ -45,10 +45,10 @@ public class Teacher extends Employee {
     }
 
     public String toString() {
-        return String.format("TEACHER:%nName            |%s %s%nDate of Birth   |%s%nAddress         |%s%n"
-                        + "Subdivision     |%s%nPosition        |%s%nChair           |%s%n"
-                        + "Academic Degree |%s%nID              |%d%nCurator Group   |%s%nHours Worked    |%d%n"
-                        + "Salary          |%1.2f%n%s%n__________________________________________________",
+        return String.format("TEACHER:%nName            | %s %s%nDate of Birth   | %s%nAddress         | %s%n"
+                        + "Subdivision     | %s%nPosition        | %s%nChair           | %s%n"
+                        + "Academic Degree | %s%nID              | %d%nCurator Group   | %s%nHours Worked    | %d%n"
+                        + "Salary          | %1.2f%n%s%n__________________________________________________",
                 getFirstName(), getLastName(), getDateOfBirth(), getAddress(), subdivision.getName(),
                 position.getName(), getChair().getName(), academicDegree.name, getId(), getGroup().getName(),
                 getHoursWorked(), getSalary(), introduceYourself());

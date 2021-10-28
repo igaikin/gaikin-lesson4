@@ -36,7 +36,6 @@ public class AccountantUtil {
             throw new IllegalArgumentException();
         }
         return null;
-
     }
 
     public static BigDecimal prizeEmployee(Employee emp) {
@@ -79,7 +78,5 @@ public class AccountantUtil {
             }
         }
         return null;
-
     }
-
 }

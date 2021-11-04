@@ -4,8 +4,12 @@ import com.belhard.lesson4.classes.model.entities.Student;
 import com.belhard.lesson4.classes.model.entities.Teacher;
 import com.belhard.lesson4.util.DynamicArray;
 import com.belhard.lesson4.util.MyCollection;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter @Setter
 public class Group {
+
     private String name;
     private Teacher teacher;
     private final MyCollection students;
@@ -46,22 +50,6 @@ public class Group {
 
     public boolean removeStudent(Student student) {
         return students.remove(student);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
     }
 
     public void removeTeacher() {

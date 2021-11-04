@@ -2,11 +2,15 @@ package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Money;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Setter @Getter
 public abstract class Employee extends Person {
+
     private Subdivision subdivision;
     private int hoursWorked;
     private Money salary = new Money(BigDecimal.ZERO, Money.Currency.USD);
@@ -15,29 +19,25 @@ public abstract class Employee extends Person {
     public enum Position {
         HEAD_OF_DEPARTMENT("Head of department"), DEPUTY("Deputy"), TEACHER("Teacher"),
         SENIOR_LECTURER("Senior Lecturer"), ASSISTANT("Assistant"), CLEANER("Cleaner");
+        @Getter
         private final String name;
 
         Position(String name) {
             this.name = name;
         }
 
-        public String getName() {
-            return name;
-        }
     }
 
     public enum Subdivision {
         WORK_STAFF("Worker"), TEACHERS_STAFF("Teacher");
 
+        @Getter
         private final String name;
 
         Subdivision(String name) {
             this.name = name;
         }
 
-        public String getName() {
-            return name;
-        }
     }
 
     public Employee(String firstName, String lastName, Date dateOfBirth, Address address, Subdivision subdivision,
@@ -48,41 +48,9 @@ public abstract class Employee extends Person {
         this.subdivision = subdivision;
     }
 
-    public Subdivision getSubdivision() {
-        return subdivision;
-    }
-
-    public void setSubdivision(Subdivision subdivision) {
-        this.subdivision = subdivision;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
     @Override
     public String introduceYourself() {
         return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
                 getLastName(), position.getName(), getDateOfBirth());
-    }
-
-    public Money getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Money salary) {
-        this.salary = salary;
-    }
-
-    public int getHoursWorked() {
-        return hoursWorked;
-    }
-
-    public void setHoursWorked(int hoursWorked) {
-        this.hoursWorked = hoursWorked;
     }
 }

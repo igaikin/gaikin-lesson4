@@ -1,5 +1,9 @@
 package com.belhard.lesson4.classes.model.entities.auxiliary;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public class Address {
     private Country country;
     private String city;
@@ -25,10 +29,6 @@ public class Address {
 
         Country(String name) {
             this.name = name;
-        }
-
-        String getName() {
-            return name;
         }
     }
 
@@ -74,53 +74,5 @@ public class Address {
             sb.append("-").append(flat);
         }
         return String.valueOf(sb);
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public int getHouse() {
-        return house;
-    }
-
-    public void setHouse(int house) {
-        this.house = house;
-    }
-
-    public String getBlock() {
-        return block;
-    }
-
-    public void setBlock(String block) {
-        this.block = block;
-    }
-
-    public int getFlat() {
-        return flat;
-    }
-
-    public void setFlat(int flat) {
-        this.flat = flat;
     }
 }

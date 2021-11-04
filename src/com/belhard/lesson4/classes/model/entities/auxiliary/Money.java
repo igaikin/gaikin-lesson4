@@ -1,7 +1,11 @@
 package com.belhard.lesson4.classes.model.entities.auxiliary;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 
+@Getter @Setter
 public class Money {
     private BigDecimal amount;
     private Currency currency;
@@ -49,21 +53,5 @@ public class Money {
     @Override
     public String toString() {
         return currency.getSymbol() + amount;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
     }
 }

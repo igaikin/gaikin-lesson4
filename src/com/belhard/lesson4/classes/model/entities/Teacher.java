@@ -3,10 +3,14 @@ package com.belhard.lesson4.classes.model.entities;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.groups.Chair;
 import com.belhard.lesson4.classes.model.groups.Group;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Getter @Setter
 public class Teacher extends Employee {
+
     private Group group;
     private Chair chair;
     private AcademicDegree academicDegree;
@@ -19,14 +23,11 @@ public class Teacher extends Employee {
         ASSISTANT_PROFESSOR("Assistant Professor"),
         BACHELOR_OF_BUSINESS_ADMINISTRATION("Bachelor of Business Administration");
 
+        @Getter
         private final String name;
 
         AcademicDegree(String name) {
             this.name = name;
-        }
-
-        public String getName() {
-            return name;
         }
     }
 
@@ -55,29 +56,5 @@ public class Teacher extends Employee {
     public String introduceYourself() {
         return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
                 getLastName(), getPosition().getName(), getDateOfBirth());
-    }
-
-    public AcademicDegree getAcademicDegree() {
-        return academicDegree;
-    }
-
-    public void setAcademicDegree(AcademicDegree academicDegree) {
-        this.academicDegree = academicDegree;
-    }
-
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
-    }
-
-    public Chair getChair() {
-        return chair;
-    }
-
-    public void setChair(Chair chair) {
-        this.chair = chair;
     }
 }

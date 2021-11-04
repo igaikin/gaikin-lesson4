@@ -4,7 +4,10 @@ import com.belhard.lesson4.classes.model.entities.Cleaner;
 import com.belhard.lesson4.classes.model.entities.Teacher;
 import com.belhard.lesson4.util.DynamicArray;
 import com.belhard.lesson4.util.MyCollection;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter @Setter
 public class Chair {
 
     private String name;
@@ -51,22 +54,6 @@ public class Chair {
 
     public boolean removeTeacher(Teacher teacher) {
         return teachers.remove(teacher);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Cleaner getCleaner() {
-        return cleaner;
-    }
-
-    public void setCleaner(Cleaner cleaner) {
-        this.cleaner = cleaner;
     }
 
     public void removeCleaner() {

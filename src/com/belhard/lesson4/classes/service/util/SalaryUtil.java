@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 public class SalaryUtil {
 
-    public static void setSalary(Employee employee) {//FIXME lombok, currency, log4j, create DB (DDL) CREATE, StarUML (ER Diagram)
+    public static void setSalary(Employee employee) {//FIXME currency, log4j, create DB (DDL) CREATE, StarUML (ER Diagram)
         BigDecimal amount = getBaseSalary(employee);
         amount = amount.add(countPositionAllowance(employee));
         amount = amount.add(countEmployeeBonus(employee));

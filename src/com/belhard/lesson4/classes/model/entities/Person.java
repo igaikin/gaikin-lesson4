@@ -2,10 +2,13 @@ package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.Identifiable;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
+import lombok.Data;
 
 import java.util.Date;
 
+@Data
 public abstract class Person implements Identifiable {
+
     private long id;
     private String firstName;
     private String lastName;
@@ -21,44 +24,4 @@ public abstract class Person implements Identifiable {
     }
 
     public abstract String introduceYourself();
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 }

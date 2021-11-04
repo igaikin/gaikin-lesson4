@@ -2,10 +2,14 @@ package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.groups.Group;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Getter @Setter
 public class Student extends Person {
+
     private String faculty;
     private int course;
     private Group group;
@@ -34,29 +38,5 @@ public class Student extends Person {
         return String.format("%nHi! My name is %s %s.%nI am a student of the university.%nI am %s course student of "
                         + "the %s faculty %sth groups.",
                 getFirstName(), getLastName(), getCourse(), getFaculty(), group.getName());
-    }
-
-    public String getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
-    }
-
-    public int getCourse() {
-        return course;
-    }
-
-    public void setCourse(int course) {
-        this.course = course;
-    }
-
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
     }
 }

@@ -2,13 +2,17 @@ package com.belhard.lesson4.classes.model.entities;
 
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.groups.Chair;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Cleaner extends Employee {
+
+    @Setter @Getter
     private Chair chair;
 
-    public Cleaner(String firstName, String lastName, Date dateOfBirth, Address address,
+    public Cleaner(String firstName, String lastName, LocalDate dateOfBirth, Address address,
                    Subdivision subdivision, Position position, int hoursWorked, Chair chair) {
         super(firstName, lastName, dateOfBirth, address, subdivision, hoursWorked, position);
         this.chair = chair;
@@ -25,13 +29,5 @@ public class Cleaner extends Employee {
                 getPosition().getName(), getHoursWorked(), getChair().getName(), getId(),
                 getSalary().getCurrency().getSymbol(), getSalary().getAmount(), introduceYourself(),
                 getPosition().getName());
-    }
-
-    public Chair getChair() {
-        return chair;
-    }
-
-    public void setChair(Chair chair) {
-        this.chair = chair;
     }
 }

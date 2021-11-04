@@ -6,7 +6,7 @@ import com.belhard.lesson4.classes.model.groups.Group;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter @Setter
 public class Teacher extends Employee {
@@ -31,7 +31,7 @@ public class Teacher extends Employee {
         }
     }
 
-    public Teacher(String firstName, String lastName, Date dateOfBirth, Address address, Subdivision subdivision,
+    public Teacher(String firstName, String lastName, LocalDate dateOfBirth, Address address, Subdivision subdivision,
                    AcademicDegree academicDegree, Position position, int hoursWorked, Chair chair, Group group) {
         super(firstName, lastName, dateOfBirth, address, subdivision, hoursWorked, position);
         this.academicDegree = academicDegree;

@@ -4,7 +4,7 @@ import com.belhard.lesson4.classes.model.Identifiable;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 public abstract class Person implements Identifiable {
@@ -12,10 +12,10 @@ public abstract class Person implements Identifiable {
     private long id;
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private Address address;
 
-    public Person(String firstName, String lastName, Date dateOfBirth, Address address) {
+    public Person(String firstName, String lastName, LocalDate dateOfBirth, Address address) {
         id = (long) (Math.random() * Long.MAX_VALUE);
         this.firstName = firstName;
         this.lastName = lastName;

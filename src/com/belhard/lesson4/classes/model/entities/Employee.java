@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Setter @Getter
 public abstract class Employee extends Person {
@@ -40,7 +40,7 @@ public abstract class Employee extends Person {
 
     }
 
-    public Employee(String firstName, String lastName, Date dateOfBirth, Address address, Subdivision subdivision,
+    public Employee(String firstName, String lastName, LocalDate dateOfBirth, Address address, Subdivision subdivision,
                     int hoursWorked, Position position) {
         super(firstName, lastName, dateOfBirth, address);
         this.position = position;

@@ -21,7 +21,7 @@ public class Teacher extends Employee {
         PROFESSOR("Professor"),
         MASTER("Master"),
         ASSISTANT_PROFESSOR("Assistant Professor"),
-        BACHELOR_OF_BUSINESS_ADMINISTRATION("Bachelor of Business Administration");
+        BACHELOR("Bachelor");
 
         @Getter
         private final String name;

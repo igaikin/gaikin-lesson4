@@ -120,7 +120,7 @@ public class SalaryUtil {
                 return amount.add(BigDecimal.valueOf(200));
             case ASSISTANT_PROFESSOR:
                 return amount.add(BigDecimal.valueOf(150));
-            case BACHELOR_OF_BUSINESS_ADMINISTRATION:
+            case BACHELOR:
                 return amount.add(BigDecimal.valueOf(100));
             default:
                 return amount.add(BigDecimal.valueOf(50));

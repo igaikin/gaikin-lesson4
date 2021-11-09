@@ -77,7 +77,7 @@ public class Application {
                 Employee.Position.SENIOR_LECTURER, 160, chair, new Group("8"));
         Teacher teacher9 = new Teacher("Dmitriy", "Medvedev", LocalDate.of(1965, 9, 14),
                 new Address(Address.Country.RUS, "Moscow", "Krasnopresnenskaya embankment", 2),
-                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.BACHELOR_OF_BUSINESS_ADMINISTRATION,
+                Employee.Subdivision.TEACHERS_STAFF, Teacher.AcademicDegree.BACHELOR,
                 Employee.Position.ASSISTANT, 140, chair, new Group("9"));
         Cleaner cleaner = new Cleaner("Petr", "Poroshenko", LocalDate.of(1965, 9, 26),
                 new Address(Address.Country.UKR, "Kiev", "Bankovaya", 11),

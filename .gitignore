@@ -4,5 +4,4 @@ out/
 /.idea/sonarlint/*
 /.idea/dataSources/*
 /.idea/dataSources*
-/.idea/libraries/*
 /.idea/sqldialects.xml

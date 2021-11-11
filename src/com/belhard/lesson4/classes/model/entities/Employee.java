@@ -17,6 +17,10 @@ public abstract class Employee extends Person {
     private Money salary = new Money(BigDecimal.ZERO, Money.Currency.USD);
     private Position position;
 
+    public Employee() {
+        super();
+    }
+
     public enum Position {
         HEAD_OF_DEPARTMENT("Head of department"), DEPUTY("Deputy"), TEACHER("Teacher"),
         SENIOR_LECTURER("Senior Lecturer"), ASSISTANT("Assistant"), CLEANER("Cleaner");

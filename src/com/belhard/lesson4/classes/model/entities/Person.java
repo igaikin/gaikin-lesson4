@@ -23,5 +23,8 @@ public abstract class Person implements Identifiable {
         this.address = address;
     }
 
+    public Person() {
+    }
+
     public abstract String introduceYourself();
 }

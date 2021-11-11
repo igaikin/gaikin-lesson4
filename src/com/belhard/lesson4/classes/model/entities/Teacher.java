@@ -16,6 +16,10 @@ public class Teacher extends Employee {
     private Chair chair;
     private AcademicDegree academicDegree;
 
+    public Teacher(long id, String firstName, String lastName) {
+        super();
+    }
+
     public enum AcademicDegree {
         DOCTOR("Doctor"),
         CANDIDATE("Candidate"),

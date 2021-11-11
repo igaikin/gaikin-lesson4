@@ -15,6 +15,10 @@ public class Student extends Person {
     private int course;
     private Group group;
 
+    public Student(long id, String firstName, String lastName) {
+        super();
+    }
+
     public Student(String firstName, String lastName, LocalDate dateOfBirth, Address address, int course,
                    String faculty,
                    Group group) {

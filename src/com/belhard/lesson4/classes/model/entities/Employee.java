@@ -1,15 +1,16 @@
 package com.belhard.lesson4.classes.model.entities;
 
-import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.entities.auxiliary.Money;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-@Setter @Getter
+
+@Data
+@EqualsAndHashCode(callSuper = true)
 public abstract class Employee extends Person {
 
     private Subdivision subdivision;
@@ -17,8 +18,10 @@ public abstract class Employee extends Person {
     private Money salary = new Money(BigDecimal.ZERO, Money.Currency.USD);
     private Position position;
 
-    public Employee() {
-        super();
+    @Override
+    public String getFormattedOutput() {
+        return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
+                getLastName(), position.getName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
     }
 
     public enum Position {
@@ -43,19 +46,5 @@ public abstract class Employee extends Person {
             this.name = name;
         }
 
-    }
-
-    public Employee(String firstName, String lastName, LocalDate dateOfBirth, Address address, Subdivision subdivision,
-                    int hoursWorked, Position position) {
-        super(firstName, lastName, dateOfBirth, address);
-        this.position = position;
-        this.hoursWorked = hoursWorked;
-        this.subdivision = subdivision;
-    }
-
-    @Override
-    public String introduceYourself() {
-        return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
-                getLastName(), position.getName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
     }
 }

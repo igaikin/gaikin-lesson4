@@ -1,14 +1,21 @@
 package com.belhard.lesson4.classes.model.entities.auxiliary;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NonNull;
 
 import java.math.BigDecimal;
 
-@Getter @Setter
+@Data
 public class Money {
+    @NonNull
     private BigDecimal amount;
+
+    @NonNull
     private Currency currency;
+
+    public String getFormattedOutput() {
+        return currency.getSymbol() + amount;
+    }
 
     public enum Currency {
         USD("Dollar", "$", BigDecimal.ONE),
@@ -22,18 +29,18 @@ public class Money {
         private final String symbol;
         private BigDecimal exchangeRate;
 
+        Currency(String name, String symbol, BigDecimal exchangeRate) {
+            this.exchangeRate = exchangeRate;
+            this.name = name;
+            this.symbol = symbol;
+        }
+
         public BigDecimal getExchangeRate() {
             return exchangeRate;
         }
 
         public void setExchangeRate(BigDecimal exchangeRate) {
             this.exchangeRate = exchangeRate;
-        }
-
-        Currency(String name, String symbol, BigDecimal exchangeRate) {
-            this.exchangeRate = exchangeRate;
-            this.name = name;
-            this.symbol = symbol;
         }
 
         public String getName() {
@@ -43,15 +50,5 @@ public class Money {
         public String getSymbol() {
             return symbol;
         }
-    }
-
-    public Money(BigDecimal amount, Currency currency) {
-        this.amount = amount;
-        this.currency = currency;
-    }
-
-    @Override
-    public String toString() {
-        return currency.getSymbol() + amount;
     }
 }

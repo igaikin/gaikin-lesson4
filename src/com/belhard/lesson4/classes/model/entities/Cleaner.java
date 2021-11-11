@@ -1,26 +1,18 @@
 package com.belhard.lesson4.classes.model.entities;
 
-import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
 import com.belhard.lesson4.classes.model.groups.Chair;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class Cleaner extends Employee {
-
-    @Setter @Getter
     private Chair chair;
 
-    public Cleaner(String firstName, String lastName, LocalDate dateOfBirth, Address address,
-                   Subdivision subdivision, Position position, int hoursWorked, Chair chair) {
-        super(firstName, lastName, dateOfBirth, address, subdivision, hoursWorked, position);
-        this.chair = chair;
-        chair.setCleaner(this);
-    }
-
-    public String toString() {
+    @Override
+    public String getFormattedOutput() {
         return String.format("\tCLEANER:%nName          | %s %s%nDate of Birth | %s%nAddress       | %s%n"
                         + "Subdivision   | %s%nPosition      | %s%nHours Worked  | %d%nService zone  | %s%n"
                         + "ID:           | %d%nSalary        | %s%.2f%n%s%n"
@@ -29,6 +21,7 @@ public class Cleaner extends Employee {
                 getFirstName(), getLastName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")),
                 getAddress(), getSubdivision().getName(), getPosition().getName(), getHoursWorked(),
                 getChair().getName(), getId(), getSalary().getCurrency().getSymbol(), getSalary().getAmount(),
-                introduceYourself(), getPosition().getName());
+                super.getFormattedOutput(), getPosition().getName());
     }
+
 }

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Getter @Setter
 public class Student extends Person {
@@ -30,7 +31,7 @@ public class Student extends Person {
         return String.format("Student:%nName          | %s %s%nDate of birth | %s%nAddress       | %s%n"
                         + "Course        | %d%nFaculty       | %s%nGroup         | %s%nID            | %d%n%"
                         + "s%n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - ",
-                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), getCourse(), getFaculty(),
+                getFirstName(), getLastName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), getAddress(), getCourse(), getFaculty(),
                 getGroup().getName(), getId(), introduceYourself());
     }
 

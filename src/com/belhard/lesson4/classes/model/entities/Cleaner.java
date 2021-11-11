@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Cleaner extends Employee {
 
@@ -25,9 +26,9 @@ public class Cleaner extends Employee {
                         + "ID:           | %d%nSalary        | %s%.2f%n%s%n"
                         + "I am an employee of the support staff in the position of %s.%n"
                         + "I love this job because of the adequate schedule and good pay.",
-                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), getSubdivision().getName(),
-                getPosition().getName(), getHoursWorked(), getChair().getName(), getId(),
-                getSalary().getCurrency().getSymbol(), getSalary().getAmount(), introduceYourself(),
-                getPosition().getName());
+                getFirstName(), getLastName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")),
+                getAddress(), getSubdivision().getName(), getPosition().getName(), getHoursWorked(),
+                getChair().getName(), getId(), getSalary().getCurrency().getSymbol(), getSalary().getAmount(),
+                introduceYourself(), getPosition().getName());
     }
 }

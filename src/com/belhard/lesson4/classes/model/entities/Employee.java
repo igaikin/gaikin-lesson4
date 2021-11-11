@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Setter @Getter
 public abstract class Employee extends Person {
@@ -51,6 +52,6 @@ public abstract class Employee extends Person {
     @Override
     public String introduceYourself() {
         return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
-                getLastName(), position.getName(), getDateOfBirth());
+                getLastName(), position.getName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
     }
 }

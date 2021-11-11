@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Getter @Setter
 public class Teacher extends Employee {
@@ -47,7 +48,8 @@ public class Teacher extends Employee {
                         + "Subdivision     | %s%nPosition        | %s%nChair           | %s%n"
                         + "Academic Degree | %s%nID              | %d%nCurator Group   | %s%nHours Worked    | %d%n"
                         + "Salary          | %s%1.2f%n%s%n__________________________________________________",
-                getFirstName(), getLastName(), getDateOfBirth(), getAddress(), getSubdivision().getName(),
+                getFirstName(), getLastName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")),
+                getAddress(), getSubdivision().getName(),
                 getPosition().getName(), getChair().getName(), academicDegree.name, getId(), getGroup().getName(),
                 getHoursWorked(), getSalary().getCurrency().getSymbol(), getSalary().getAmount(), introduceYourself());
     }
@@ -55,6 +57,6 @@ public class Teacher extends Employee {
     @Override
     public String introduceYourself() {
         return String.format("%nHi! My name is %s %s.%nI`m %s this University. I'm %s birth.", getFirstName(),
-                getLastName(), getPosition().getName(), getDateOfBirth());
+                getLastName(), getPosition().getName(), getDateOfBirth().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
     }
 }

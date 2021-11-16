@@ -1,12 +1,12 @@
 package com.belhard.lesson4.classes.service.util;
 
-import com.belhard.lesson4.classes.model.entities.Cleaner;
-import com.belhard.lesson4.classes.model.entities.Employee;
-import com.belhard.lesson4.classes.model.entities.Employee.Position;
-import com.belhard.lesson4.classes.model.entities.Teacher;
-import com.belhard.lesson4.classes.model.entities.Teacher.AcademicDegree;
-import com.belhard.lesson4.classes.model.entities.auxiliary.Money;
-import com.belhard.lesson4.classes.model.groups.Chair;
+import com.belhard.lesson4.classes.model.beans.entities.Cleaner;
+import com.belhard.lesson4.classes.model.beans.entities.Employee;
+import com.belhard.lesson4.classes.model.beans.entities.Employee.Position;
+import com.belhard.lesson4.classes.model.beans.entities.Teacher;
+import com.belhard.lesson4.classes.model.beans.entities.Teacher.AcademicDegree;
+import com.belhard.lesson4.classes.model.beans.entities.auxiliary.Money;
+import com.belhard.lesson4.classes.model.beans.groups.Chair;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

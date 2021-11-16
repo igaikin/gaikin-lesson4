@@ -1,19 +1,17 @@
-package com.belhard.lesson4.classes.model.dao;
+package com.belhard.lesson4.classes.model.service;
 
 import com.belhard.lesson4.classes.model.beans.entities.Student;
 
 import java.util.List;
 
-public interface StudentDao {
+public interface StudentService {
     Student getById(long id);
 
     List<Student> getAll();
-
-    List<Student> getByGroupId(long groupId);
 
     void create(Student student);
 
     void update(Student student);
 
-    int delete(long id);
+    boolean delete(long id);
 }

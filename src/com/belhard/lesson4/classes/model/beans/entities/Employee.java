@@ -1,6 +1,6 @@
-package com.belhard.lesson4.classes.model.entities;
+package com.belhard.lesson4.classes.model.beans.entities;
 
-import com.belhard.lesson4.classes.model.entities.auxiliary.Money;
+import com.belhard.lesson4.classes.model.beans.entities.auxiliary.Money;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

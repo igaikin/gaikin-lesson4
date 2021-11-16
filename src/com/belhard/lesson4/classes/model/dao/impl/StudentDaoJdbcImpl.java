@@ -2,23 +2,25 @@ package com.belhard.lesson4.classes.model.dao.impl;
 
 import com.belhard.lesson4.classes.model.dao.StudentDao;
 import com.belhard.lesson4.classes.model.dao.connection.ConnectionManager;
-import com.belhard.lesson4.classes.model.entities.Student;
+import com.belhard.lesson4.classes.model.beans.entities.Student;
+import com.belhard.lesson4.classes.model.beans.entities.auxiliary.Address;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDaoJdbcImpl implements StudentDao {
     private final ConnectionManager connectionManager = ConnectionManager.getInstance();
     private static final String GET_BY_ID =
-            "SELECT id, first_name, last_name, date_of_birth, students.faculty_id FROM students WHERE id = ? AND deleted = false";
-    private static final String GET_ALL = "SELECT id, first_name, last_name, date_of_birth, faculty.faculty_id FROM students, faculty WHERE deleted = false";
+            "SELECT id, first_name, last_name, date_of_birth, address, course, group_id FROM students WHERE id = ? AND deleted = false";
+    private static final String GET_ALL =
+            "SELECT s.id, s.first_name, s.last_name, s.date_of_birth, s.address, s.course, s.group_id FROM students s WHERE deleted = false";
+    private static final String GET_BY_GROUP_ID =
+            "SELECT s.id, s.first_name, s.last_name, s.date_of_birth, s.address, s.course, s.group_id FROM students s WHERE deleted = false AND s.group_id = ?";
 
     @Override
     public Student getById(long id) {
@@ -42,8 +44,11 @@ public class StudentDaoJdbcImpl implements StudentDao {
         student.setId(resultSet.getLong("id"));
         student.setFirstName(resultSet.getString("first_name"));
         student.setLastName(resultSet.getString("last_name"));
-//        student.setDateOfBirth(resultSet.getDate("date_of_birth"));
-        student.setFaculty(resultSet.getString("faculty_id"));
+        student.setDateOfBirth(resultSet.getDate("date_of_birth").toLocalDate());
+        Address address = new Address();
+        address.setCity(resultSet.getString("address"));
+        student.setAddress(address);
+        student.setCourse(resultSet.getInt("course"));
         return student;
     }
 
@@ -54,6 +59,23 @@ public class StudentDaoJdbcImpl implements StudentDao {
             Connection connection = connectionManager.getConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(GET_ALL);
+            while (resultSet.next()) {
+                students.add(processStudent(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return students;
+    }
+
+    @Override
+    public List<Student> getByGroupId(long groupId) {
+        List<Student> students = new ArrayList<>();
+        try {
+            Connection connection = connectionManager.getConnection();
+            PreparedStatement statement = connection.prepareStatement(GET_BY_GROUP_ID);
+            statement.setLong(1, groupId);
+            ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 students.add(processStudent(resultSet));
             }

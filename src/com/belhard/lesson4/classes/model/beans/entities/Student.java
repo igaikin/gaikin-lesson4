@@ -1,11 +1,10 @@
-package com.belhard.lesson4.classes.model.entities;
+package com.belhard.lesson4.classes.model.beans.entities;
 
-import com.belhard.lesson4.classes.model.groups.Group;
+import com.belhard.lesson4.classes.model.beans.groups.Group;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Data

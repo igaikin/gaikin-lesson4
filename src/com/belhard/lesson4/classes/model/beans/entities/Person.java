@@ -1,7 +1,7 @@
-package com.belhard.lesson4.classes.model.entities;
+package com.belhard.lesson4.classes.model.beans.entities;
 
-import com.belhard.lesson4.classes.model.Identifiable;
-import com.belhard.lesson4.classes.model.entities.auxiliary.Address;
+import com.belhard.lesson4.classes.model.beans.Identifiable;
+import com.belhard.lesson4.classes.model.beans.entities.auxiliary.Address;
 import lombok.Data;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package com.belhard.lesson4.classes.model.entities.auxiliary;
+package com.belhard.lesson4.classes.model.beans.entities.auxiliary;
 
 import lombok.Data;
 

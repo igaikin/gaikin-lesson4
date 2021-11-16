@@ -1,20 +1,19 @@
-package com.belhard.lesson4.classes.model.groups;
+package com.belhard.lesson4.classes.model.beans.groups;
 
-import com.belhard.lesson4.classes.model.entities.Cleaner;
-import com.belhard.lesson4.classes.model.entities.Teacher;
+import com.belhard.lesson4.classes.model.beans.entities.Cleaner;
+import com.belhard.lesson4.classes.model.beans.entities.Teacher;
 import com.belhard.lesson4.util.DynamicArray;
 import com.belhard.lesson4.util.MyCollection;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter @Setter
+@Data
 public class Chair {
 
     private String name;
     private Cleaner cleaner;
     private final MyCollection teachers;
     private static final int MAX_NUMBER_OF_TEACHERS = 10;
-    public static final String NEW_LINE = System.lineSeparator();
+    private static final String NEW_LINE = System.lineSeparator();
 
     public Chair(String name) {
         this.name = name;
@@ -32,13 +31,14 @@ public class Chair {
         if (cleaner != null) {
             sb.append(cleaner).append(NEW_LINE).append(NEW_LINE);
         }
-        int util = 1;
-        for (int i = 0; i < teachers.toArray().length; i++) {
-            if (teachers.toArray()[i] != null) {
-                sb.append("\t").append(util).append(":  ").append(teachers.toArray()[i].toString()).append(NEW_LINE)
+        Object[] teachers = this.teachers.toArray();
+        for (int i = 0; i < teachers.length; i++) {
+                sb.append("\t")
+                        .append(i + 1)
+                        .append(":  ")
+                        .append(teachers[i].toString())
+                        .append(NEW_LINE)
                         .append(NEW_LINE);
-                util++;
-            }
         }
         return sb.toString();
     }

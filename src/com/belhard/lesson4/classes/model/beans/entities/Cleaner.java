@@ -1,6 +1,6 @@
-package com.belhard.lesson4.classes.model.entities;
+package com.belhard.lesson4.classes.model.beans.entities;
 
-import com.belhard.lesson4.classes.model.groups.Chair;
+import com.belhard.lesson4.classes.model.beans.groups.Chair;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

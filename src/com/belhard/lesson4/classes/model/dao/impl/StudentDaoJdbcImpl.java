@@ -17,8 +17,8 @@ import java.util.List;
 public class StudentDaoJdbcImpl implements StudentDao {
     private final ConnectionManager connectionManager = ConnectionManager.getInstance();
     private static final String GET_BY_ID =
-            "SELECT id, first_name, last_name FROM students WHERE id = ? AND deleted = false";
-    private static final String GET_ALL = "SELECT id, first_name, last_name FROM students WHERE deleted = false";
+            "SELECT id, first_name, last_name, date_of_birth, students.faculty_id FROM students WHERE id = ? AND deleted = false";
+    private static final String GET_ALL = "SELECT id, first_name, last_name, date_of_birth, faculty.faculty_id FROM students, faculty WHERE deleted = false";
 
     @Override
     public Student getById(long id) {
@@ -42,6 +42,8 @@ public class StudentDaoJdbcImpl implements StudentDao {
         student.setId(resultSet.getLong("id"));
         student.setFirstName(resultSet.getString("first_name"));
         student.setLastName(resultSet.getString("last_name"));
+//        student.setDateOfBirth(resultSet.getDate("date_of_birth"));
+        student.setFaculty(resultSet.getString("faculty_id"));
         return student;
     }
 
@@ -63,12 +65,10 @@ public class StudentDaoJdbcImpl implements StudentDao {
 
     @Override
     public void create(Student student) {
-
     }
 
     @Override
     public void update(Student student) {
-
     }
 
     @Override

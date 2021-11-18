@@ -9,7 +9,7 @@ public class ProductDao {
 
     static {
         PRODUCTS = new ArrayList<>();
-        PRODUCTS.add(new Product(1, "Milk", BigDecimal.valueOf(2.99),true));
+        PRODUCTS.add(new Product(1, "Milk", BigDecimal.valueOf(2.99),false));
         PRODUCTS.add(new Product(2, "Butter", BigDecimal.valueOf(4.99),false));
         PRODUCTS.add(new Product(3, "Sugar", BigDecimal.valueOf(2.49),false));
         PRODUCTS.add(new Product(4, "Bread", BigDecimal.valueOf(3.49),false));
